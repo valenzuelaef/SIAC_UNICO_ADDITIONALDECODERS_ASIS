@@ -48,7 +48,7 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
             PuntoAtencionResponse oPointAttention = new PuntoAtencionResponse();
             Tools.Entity.AuditRequest oAuditRequest = Utils.Common.CreateAuditRequest<Tools.Entity.AuditRequest>(SessionID);
             stridSession = SessionID;
-            oBodyRequest.TransactionId= "2";
+            oBodyRequest.TransactionId = TransactionID;
             DatosAdicionalesResponse oRequestDatosAdicionales = new DatosAdicionalesResponse();
 
             try
@@ -83,7 +83,8 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
                         codeRol = oBodyRequest.codeRol,
                         codeCac = oBodyRequest.codeCac,
                         state = oBodyRequest.state,
-                        Type = oBodyRequest.Type
+                        Type = oBodyRequest.Type,
+                        //flagConvivencia = ConfigurationManager.AppSettings["flagConvivenciaAsIsToBeReingFija"]
                     }
                 };
 
@@ -106,12 +107,12 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
                         }
                     }
                 }
-
                 #region "Datos adicionales primera carga"
                 this.GetDatosAdicionales(new DatosAdicionalesBodyRequest
                 {
                     IdTransaccion = oBodyRequest.TransactionId,
-                    IdProceso = "1",
+                    IdProceso = Tools.Utils.Constants.NumberOneString,
+                    tecnologia = oInitialDataResponse.MessageResponse.Body.CoreServices.Technology,
                     IdProducto = oInitialDataResponse.MessageResponse.Body.CoreServices.Technology,
                     ContratoId = oBodyRequest.ContractID,
                     customerId = oBodyRequest.CustomerID
@@ -121,46 +122,30 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
                 #endregion
 
                 #region "Datos adicionales segunda carga"
-                //this.GetDatosAdicionales(new DatosAdicionalesBodyRequest
-                //{
-                //    IdTransaccion = oBodyRequest.TransactionId,
-                //    IdProceso = "2",
-                //    tecnologia = oInitialDataResponse.MessageResponse.Body.CoreServices.Technology,
-                //    ContratoId = oBodyRequest.ContractID,
-                //    customerId = oBodyRequest.CustomerID,
-                //    plan = oInitialDataResponse.MessageResponse.Body.CoreServices.planCode
-                //});
 
-                ////Se pega dos veces al servicio de planes ya que la tecnologia 9 no trae info
-                //if (oRequestDatosAdicionales.MessageResponse.Body.CodigoRespuesta == 0) {
-                //    if (oDatosAdi.MessageResponse.Body.CodigoRespuesta == 0) {
-                //        if (oDatosAdi.MessageResponse.Body.servicios.PlanFijaServicioCampana.codigoRespuesta == "0") {
-                //            oRequestDatosAdicionales.MessageResponse.Body.servicios.PlanFijaServicioCampana = oDatosAdi.MessageResponse.Body.servicios.PlanFijaServicioCampana;
+                this.GetDatosAdicionales(new DatosAdicionalesBodyRequest
+                {
+                    IdTransaccion = oBodyRequest.TransactionId,
+                    IdProceso = Tools.Utils.Constants.NumberTwoString,
+                    IdProducto = oBodyRequest.TransactionId == Tools.Utils.Constants.NumberTenString ? oInitialDataResponse.MessageResponse.Body.CoreServices.Technology : Tools.Utils.Constants.NumberFiveString,//ContratoPublico-TOBE
+                    tecnologia = oBodyRequest.TransactionId == Tools.Utils.Constants.NumberTenString ? oInitialDataResponse.MessageResponse.Body.CoreServices.Technology : Tools.Utils.Constants.NumberFiveString,//ContratoPublico-TOBE
+                    ContratoId = oBodyRequest.ContractID,
+                    customerId = oBodyRequest.CustomerID,
+                    plan = oInitialDataResponse.MessageResponse.Body.CoreServices.planCode,
+                    //coIdPub = oBodyRequest.coIdPub,//ContratoPublico-TOBE
+                    //flagConvivencia = ConfigurationManager.AppSettings["flagConvivenciaAsIsToBeReingFija"]//ContratoPublico-TOBE
+                });
 
-                //        }
-                //        else if (oDatosAdi.MessageResponse.Body.servicios.PlanFijaServicioCampana.codigoRespuesta == "2" && oInitialDataResponse.MessageResponse.Body.CoreServices.Technology == "9")
-                //        {
-                            this.GetDatosAdicionales(new DatosAdicionalesBodyRequest
-                            {
-                                IdTransaccion = oBodyRequest.TransactionId,
-                                IdProceso = "2",
-                                tecnologia = "5",
-                                ContratoId = oBodyRequest.ContractID,
-                                customerId = oBodyRequest.CustomerID,
-                                plan = oInitialDataResponse.MessageResponse.Body.CoreServices.planCode
-                            });
-
-                            if (oRequestDatosAdicionales.MessageResponse.Body.CodigoRespuesta == 0) {
-                                if (oDatosAdi.MessageResponse.Body.CodigoRespuesta == 0) {
-                                    if (oDatosAdi.MessageResponse.Body.servicios.PlanFijaServicioCampana.codigoRespuesta == "0")
-                                    {
-                                        oRequestDatosAdicionales.MessageResponse.Body.servicios.PlanFijaServicioCampana = oDatosAdi.MessageResponse.Body.servicios.PlanFijaServicioCampana;
-                                    }
-                                }
-                            }
-                //        }                        
-                //    }                    
-                //}
+                if (oRequestDatosAdicionales.MessageResponse.Body.CodigoRespuesta == 0)
+                {
+                    if (oDatosAdi.MessageResponse.Body.CodigoRespuesta == 0)
+                    {
+                        if (oDatosAdi.MessageResponse.Body.servicios.PlanFijaServicioCampana.codigoRespuesta == "0")
+                        {
+                            oRequestDatosAdicionales.MessageResponse.Body.servicios.PlanFijaServicioCampana = oDatosAdi.MessageResponse.Body.servicios.PlanFijaServicioCampana;
+                        }
+                    }
+                }
                 #endregion
             }
             catch (Exception ex)
@@ -215,26 +200,29 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
                 {
                     IdTransaccion = request.IdTransaccion,
                     IdProceso = request.IdProceso,
-                    IdProducto = request.IdProducto == null ? "" : request.IdProducto,
-                    CodPais = request.CodPais == null ? "" : request.CodPais,
-                    IdTipoUrba = request.IdTipoUrba == null ? "" : request.IdTipoUrba,
-                    ContratoId = request.ContratoId == null ? "" : request.ContratoId,
-                    IdTipoInt = request.IdTipoInt == null ? "" : request.IdTipoInt,
-                    IdCodVia = request.IdCodVia == null ? "" : request.IdCodVia,
-                    CodUbi = request.CodUbi == null ? "" : request.CodUbi,
-                    Ubigeo = request.Ubigeo == null ? "" : request.Ubigeo,
-                    IdPoblado = request.IdPoblado == null ? "" : request.IdPoblado,
-                    TipTrabajo = request.TipTrabajo == null ? "" : request.TipTrabajo,
-                    FlagCE = request.FlagCE == null ? "" : request.FlagCE,
-                    TipoServicio = request.TipoServicio == null ? "0061" : request.TipoServicio,
-                    TipTra = request.TipTra == null ? "" : request.TipTra,
-                    Origen = request.Origen == null ? "" : request.Origen,
-                    IdPlano = request.IdPlano == null ? "" : request.IdPlano,
-                    tecnologia = request.tecnologia == null ? "" : request.tecnologia,
-                    customerId = request.customerId == null ? "" : request.customerId,
-                    plan = request.plan == null ? "" : request.plan,
-                    canal = "",
-                    cantDeco = request.cantDeco == null ? "" : request.cantDeco,
+                    IdProducto = request.IdProducto == null ? string.Empty : request.IdProducto,
+                    //IdProducto = request.tecnologia == null ? string.Empty : request.tecnologia,
+                    CodPais = request.CodPais == null ? string.Empty : request.CodPais,
+                    IdTipoUrba = request.IdTipoUrba == null ? string.Empty : request.IdTipoUrba,
+                    ContratoId = request.ContratoId == null ? string.Empty : request.ContratoId,
+                    IdTipoInt = request.IdTipoInt == null ? string.Empty : request.IdTipoInt,
+                    IdCodVia = request.IdCodVia == null ? string.Empty : request.IdCodVia,
+                    CodUbi = request.CodUbi == null ? string.Empty : request.CodUbi,
+                    Ubigeo = request.Ubigeo == null ? string.Empty : request.Ubigeo,
+                    IdPoblado = request.IdPoblado == null ? string.Empty : request.IdPoblado,
+                    TipTrabajo = request.TipTrabajo == null ? string.Empty : request.TipTrabajo,
+                    FlagCE = request.FlagCE == null ? string.Empty : request.FlagCE,
+                    TipoServicio = request.TipoServicio == null ? Tools.Utils.Constants.FormatDoubleZero + Tools.Utils.Constants.NumberSixString + Tools.Utils.Constants.NumberOneString : request.TipoServicio,
+                    TipTra = request.TipTra == null ? string.Empty : request.TipTra,
+                    Origen = request.Origen == null ? string.Empty : request.Origen,
+                    IdPlano = request.IdPlano == null ? string.Empty : request.IdPlano,
+                    tecnologia = request.tecnologia == null ? string.Empty : request.tecnologia,
+                    customerId = request.customerId == null ? string.Empty : request.customerId,
+                    plan = request.plan == null ? string.Empty : request.plan,
+                    canal = string.Empty,
+                    cantDeco = request.cantDeco == null ? string.Empty : request.cantDeco,
+                    //coIdPub = request.coIdPub,//ContratoPublico-TOBE
+                    //flagConvivencia = ConfigurationManager.AppSettings["flagConvivenciaAsIsToBeReingFija"]//request.flagConvivencia,//ContratoPublico-TOBE
                 }
             };
 
@@ -262,7 +250,7 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
             }, JsonRequestBehavior.AllowGet);
 
         }
-        
+
         [HttpPost]
         public JsonResult GetDatosFranjaHorario(FranjaHorariaBodyRequest request)
         {
@@ -335,9 +323,9 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
         }
 
         [HttpPost]
-        public JsonResult postGeneraTransaccion(GuardarDatosDataBodyRequest request, string stridSession)
+        public JsonResult postGeneraTransaccion(GuardarDatosDataBodyRequest request, string stridSession, string TransactionID)
         {
-            request.idFlujo = ConfigurationManager.AppSettings["IdFlujoAddDecodersFTTH"];
+            request.idFlujo = TransactionID == Tools.Utils.Constants.NumberTwoString ? ConfigurationManager.AppSettings["IdFlujoAddDecodersFTTH"] : ConfigurationManager.AppSettings["IdFlujoAddDecodersFTTHONE"];
             string strUrl = ConfigurationManager.AppSettings["DPGetGuardarDatosAgendamiento"];
             Models.Transversal.GuardarDatosRequest oDataRequest = new Models.Transversal.GuardarDatosRequest();
             Models.Transversal.GuardarDatosResponse oDataResponse = new Models.Transversal.GuardarDatosResponse();
@@ -360,15 +348,17 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
            }).ToList().ForEach(y => y.parametros.FirstOrDefault().valor = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(y.parametros.FirstOrDefault().valor)));
 
             //Encriptamos a base64 Trama_Venta
-            request.Servicios.Where(m => m.Servicio == "Tramas").Select(m => new Models.Transversal.Servicios {
+            request.Servicios.Where(m => m.Servicio == "Tramas").Select(m => new Models.Transversal.Servicios
+            {
                 Servicio = m.Servicio,
                 parametros = m.parametros.Where(u => u.parametro == "Trama_Ventas").ToList()
             }).ToList().ForEach(y => y.parametros.FirstOrDefault().valor = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(y.parametros.FirstOrDefault().valor)));
 
             //Encriptamos a base64 Trama_Servicios
-            request.Servicios.Where(m => m.Servicio == "Tramas").Select(m => new Models.Transversal.Servicios {
-               Servicio = m.Servicio,
-               parametros = m.parametros.Where(u => u.parametro == "Trama_Servicios").ToList()
+            request.Servicios.Where(m => m.Servicio == "Tramas").Select(m => new Models.Transversal.Servicios
+            {
+                Servicio = m.Servicio,
+                parametros = m.parametros.Where(u => u.parametro == "Trama_Servicios").ToList()
             }).ToList().ForEach(y => y.parametros.FirstOrDefault().valor = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(y.parametros.FirstOrDefault().valor)));
 
             //Encriptamos a base64 Lista_Servicios_Contratos
@@ -400,8 +390,10 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
                 parametros = m.parametros.Where(u => u.valor == null).ToList()
             }).ToList();
 
-            foreach (var Item in obj) {
-                if (Item.parametros.Count > 0) {
+            foreach (var Item in obj)
+            {
+                if (Item.parametros.Count > 0)
+                {
                     foreach (var item in Item.parametros)
                     {
                         item.valor = "";
@@ -439,12 +431,13 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
             };
             try
             {
-                Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Url: " + strUrl); 
+                databytesFile = null;
+                Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Url: " + strUrl);
                 Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Request postGeneraTransaccion DP AdditionalDecos: " + JsonConvert.SerializeObject(oDataRequest));
                 oDataResponse = Utils.RestService.PostInvoque<Models.Transversal.GuardarDatosResponse>(strUrl, oDataRequest.Audit, oDataRequest, true);
                 Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Response postGeneraTransaccion DP AdditionalDecos: " + JsonConvert.SerializeObject(oDataResponse));
                 databytesFile = Convert.FromBase64String(oDataResponse.MessageResponse.Body.constancia);
-                oDataResponse.MessageResponse.Body.constancia = "";
+
 
             }
             catch (Exception ex)
@@ -504,15 +497,6 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
                 Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Request GetDatosVisitaTecnica DP AdditionalDecos: " + JsonConvert.SerializeObject(oDataRequest));
                 oDataResponse = Utils.RestService.PostInvoque<Models.VisitaTecnica.VisitaTecnicaResponse>(strUrl, oDataRequest.Audit, oDataRequest, true);
                 Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Response GetDatosVisitaTecnica DP AdditionalDecos: " + JsonConvert.SerializeObject(oDataResponse));
-                //oDataResponse.MessageResponse.Body.anotaciones = oDataResponse.MessageResponse.Body.anotaciones.Replace(System.Environment.NewLine, "");
-                //System.Text.RegularExpressions.Regex.Replace(oDataResponse.MessageResponse.Body.anotaciones, @"\r\n?|\n", " ");
-                //FORMATEAMOS LOS SALTOS DE LINEAS EN UNA SOLA LINEA PORQUE DE LO CONTRARIO SALDRÍA ERROR EN LA GENERACION DE TRAMA VENTA PARA EL TRANSVERSAL
-                //if (oDataResponse.MessageResponse.Body.anotaciones != null)
-                //{
-                //    oDataResponse.MessageResponse.Body.anotaciones = oDataResponse.MessageResponse.Body.anotaciones.Length > 0 ?
-                //                                                        string.Concat(oDataResponse.MessageResponse.Body.anotaciones.Split()) :
-                //                                                        oDataResponse.MessageResponse.Body.anotaciones;
-                //}
             }
             catch (Exception ex)
             {
@@ -635,7 +619,7 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
                     }
                 };
 
-                Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Url: " + strUrl); 
+                Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Url: " + strUrl);
                 Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Request GestionarCancelarTOA Cambio Plan: " + JsonConvert.SerializeObject(oDataRequest));
                 oDataResponse = Utils.RestService.PostInvoque<CancelarTOAResponse>(strUrl, oDataRequest.Audit, oDataRequest, true);
                 Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Response GestionarCancelarTOA Cambio Plan: " + JsonConvert.SerializeObject(oDataResponse));

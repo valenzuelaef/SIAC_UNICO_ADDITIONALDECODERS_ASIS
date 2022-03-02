@@ -562,14 +562,14 @@
             that.AdditionalDecos.oRequest.arrEquipmentAdd = lstEquipmentAdd;
 
             var intMaxEquipmentPlan = lstEquipmentGlobal.length;
-            var intMaxEquipmentConfig = that.AdditionalDecos.Configuration.Constants.MaxEquipment;
+            var intMaxEquipmentConfig = '4'//that.AdditionalDecos.Configuration.Constants.MaxEquipment;
             var intMaxEquipment = 0;
 
-            if (intMaxEquipmentPlan <= intMaxEquipmentConfig) {
+            /*if (intMaxEquipmentPlan <= intMaxEquipmentConfig) {
                 intMaxEquipment = intMaxEquipmentPlan;
-            } else {
-                intMaxEquipment = intMaxEquipmentConfig;
-            }
+            } else {*/
+            intMaxEquipment = intMaxEquipmentConfig;
+            /*}*/
 
             controls.spanMaxDecos.text(intMaxEquipment);
             that.AdditionalDecos.oRequest.TotMax = (intMaxEquipment * 1);
@@ -672,7 +672,6 @@
                 $(ElementTr).append(ElementTd1);
                 $(ElementTr).append(ElementTd2);
                 $(ElementTr).append(ElementTd3);
-
                 $(controls.tbodyEquipment).append(ElementTr);
 
                 ////Creacion de detalle
@@ -689,7 +688,6 @@
                 var ElementLabelSummary = document.createElement('label');
                 ElementLabelSummary.style.fontSize = '15px';
                 ElementLabelSummary.innerHTML = Item.tipoEquipo.replace('_', ' ');
-
                 $(ElementDivSummary).append(ElementImgSummary);
                 $(ElementDivSummary).append(ElementLabelSummary);
 
@@ -1054,14 +1052,14 @@
                 return 0;
             });
 
-            console.log(arrEquipmentPlan);
+            console.log('plataformaAT: ' + Session.SessionParams.DATACUSTOMER.objPostDataAccount.plataformaAT);
             $.each(arrEquipmentClient, function (Index, Item) {
-                console.log('Item.idServPvu --> ' + Item.idServPvu + ' -- ' + 'Item.idServPvuTobe --> ' + Item.idServPvuTobe);
+                console.log('Item.idServPvu --> ' + Item.idServPvu + ' - o - ' + 'Item.idServPvuTobe --> ' + Item.idServPvuTobe);
                 if (!($.array.isEmptyOrNull(Item.idServPvu) && $.array.isEmptyOrNull(Item.idServPvuTobe))) {
                     if (Session.SessionParams.DATACUSTOMER.objPostDataAccount.plataformaAT == 'TOBE')
-                        var oEquipment = arrEquipmentPlan.filter(function (x) { return x.LineID == Item.idServPvu })[0];
-                    else
                         var oEquipment = arrEquipmentPlan.filter(function (x) { return x.LineID == Item.idServPvu || x.LineID == Item.idServPvuTobe; })[0];
+                    else
+                        var oEquipment = arrEquipmentPlan.filter(function (x) { return x.LineID == Item.idServPvu })[0];
                     debugger;
                     var oGroup = arrEquipmentGroup.filter(function (x) { return x.tipoEquipo == oEquipment.tipoEquipo })[0];
 
@@ -1084,7 +1082,7 @@
                     }
 
                     intEquipmentTot++;
-            }
+                }
             });
 
             that.AdditionalDecos.oRequest.TotEquipment = intEquipmentTot;
@@ -1377,9 +1375,12 @@
         },
 
 
+
+
         loadProgramming: function (oRequest) {
             var that = this, controls = that.getControls();
             that.getLoadingPage();
+            debugger;
             $.app.ajax({
                 type: 'POST',
                 contentType: "application/json; charset=utf-8",
@@ -2008,7 +2009,7 @@
             objLoadParameters.idFlujo = '';
             objLoadParameters.servicios = servicios;
             objLoadParameters.stridSession = Session.UrlParams.IdSession;
-
+            objLoadParameters.TransactionID = that.AdditionalDecos.Data.idTransactionFront;
             var urlBase = '/AdditionalDecos/Home/postGeneraTransaccion';
 
             $.app.ajax({
@@ -2036,6 +2037,8 @@
                                 controls.divFooterInfoSot.prepend('Nro. SOT: ' + nroSot + ' </p>');
 
                                 $('.transaction-button-Steps').attr('disabled', true);
+                                that.AdditionalDecos.Data.Constancia = !$.string.isEmptyOrNull(response.data.MessageResponse.Body.constancia) ? true : false;
+
                             }
                         } else {
                             alert('No se pudo ejecutar la transacción. Informe o vuelva a intentar')
@@ -2208,7 +2211,7 @@
                 XMLServicios += string.format(detailXML,
                     select.ServiceDescription,
                     select.ServiceType,
-                    price
+					price
                 );
             });
 
@@ -2572,11 +2575,11 @@
             var lstTypeWork = that.AdditionalDecos.Data.TypeWork;
             var oValidateETA = that.AdditionalDecos.Data.ValidaEta;
             var intTypeWork = 0;
-
             controls.cboTypeWork.empty();
+            debugger;
             controls.cboTypeWork.attr('disabled', false);
             controls.cboTypeWork.append($('<option>', { value: '', html: '-Seleccionar-' }));
-            $.each(lstTypeWork, function (index, value) {              
+            $.each(lstTypeWork, function (index, value) {
                 if (value.TipoTrabajo == that.AdditionalDecos.oRequest.strTypeWork) {
                     controls.cboTypeWork.attr('disabled', true);
                     controls.cboTypeWork.append($('<option>', { value: value.TipoTrabajo, html: value.Descripcion, selected: true }));
@@ -2760,14 +2763,19 @@
             return strResult;
         },
         btnConstancy_click: function () {
+            var that = this;
             var params = ['height=600',
                 'width=750',
                 'resizable=yes',
                 'location=yes'
             ].join(',');
-
             var strIdSession = Session.UrlParams.IdSession;
-            window.open('/AdditionalDecos/Home/ShowRecordSharedFile' + "?&strIdSession=" + strIdSession, "_blank", params);
+
+            if (that.AdditionalDecos.Data.Constancia)
+                window.open('/AdditionalDecos/Home/ShowRecordSharedFile' + "?&strIdSession=" + strIdSession, "_blank", params);
+            else
+                alert('Ocurrió un error al generar la constancia.');
+
         },
         getAmountOcc: function () {
             var that = this, controls = this.getControls();
