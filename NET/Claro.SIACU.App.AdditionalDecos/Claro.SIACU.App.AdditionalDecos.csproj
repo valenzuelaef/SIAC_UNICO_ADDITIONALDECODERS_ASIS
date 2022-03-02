@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5389982F-1807-4B6F-ACF9-FE5264CBB2D7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Claro.SIACU.App.AdditionalDecos</RootNamespace>
+    <AssemblyName>Claro.SIACU.App.AdditionalDecos</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Binaries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Tools.Entity">
+      <HintPath>..\Binaries\Tools.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Tools.Traces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Tools.Traces.dll</HintPath>
+    </Reference>
+    <Reference Include="Tools.Utils">
+      <HintPath>..\Binaries\Tools.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="Areas\AdditionalDecos\Scripts\Scheduling.js" />
+    <Content Include="Content\css\datepicker.css" />
+    <Content Include="Content\images\SUFija\3playBlanco.png" />
+    <Content Include="Content\images\SUFija\claro-bg.png" />
+    <Content Include="Content\images\SUFija\ico-save.svg" />
+    <Content Include="Content\images\SUFija\ico_3play.svg" />
+    <Content Include="Content\images\SUFija\ico_3play_02.svg" />
+    <Content Include="Content\images\SUFija\ico_3play_md.svg" />
+    <Content Include="Content\images\SUFija\ico_3play_sm.svg" />
+    <Content Include="Content\images\SUFija\ico_add.svg" />
+    <Content Include="Content\images\SUFija\ico_agendamiento.svg" />
+    <Content Include="Content\images\SUFija\ico_agendamiento_off.svg" />
+    <Content Include="Content\images\SUFija\ico_alert_claro.svg" />
+    <Content Include="Content\images\SUFija\ico_buena_off.svg" />
+    <Content Include="Content\images\SUFija\ico_buena_on.svg" />
+    <Content Include="Content\images\SUFija\ico_cerrar.svg" />
+    <Content Include="Content\images\SUFija\ico_cliente.svg" />
+    <Content Include="Content\images\SUFija\ico_cobertura_off.svg" />
+    <Content Include="Content\images\SUFija\ico_cobertura_on.svg" />
+    <Content Include="Content\images\SUFija\ico_deco_1.svg" />
+    <Content Include="Content\images\SUFija\ico_detallado_off.svg" />
+    <Content Include="Content\images\SUFija\ico_detallado_on.svg" />
+    <Content Include="Content\images\SUFija\ico_face_no_off.svg" />
+    <Content Include="Content\images\SUFija\ico_face_no_on.svg" />
+    <Content Include="Content\images\SUFija\ico_face_si_off.svg" />
+    <Content Include="Content\images\SUFija\ico_face_si_on.svg" />
+    <Content Include="Content\images\SUFija\ico_guardar_blanco.svg" />
+    <Content Include="Content\images\SUFija\ico_guardar_rojo.svg" />
+    <Content Include="Content\images\SUFija\ico_info_adicional.svg" />
+    <Content Include="Content\images\SUFija\ico_new_pqt.svg" />
+    <Content Include="Content\images\SUFija\ico_nodo.svg" />
+    <Content Include="Content\images\SUFija\ico_orden_visita.svg" />
+    <Content Include="Content\images\SUFija\ico_paquete.svg" />
+    <Content Include="Content\images\SUFija\ico_persona.svg" />
+    <Content Include="Content\images\SUFija\ico_pqt_actual.svg" />
+    <Content Include="Content\images\SUFija\ico_resumen%402x.svg" />
+    <Content Include="Content\images\SUFija\ico_resumen.svg" />
+    <Content Include="Content\images\SUFija\ico_resumen_off.svg" />
+    <Content Include="Content\images\SUFija\ico_scheduling.svg" />
+    <Content Include="Content\images\SUFija\ico_cable.svg" />
+    <Content Include="Content\images\SUFija\ico_benefits.svg" />
+    <Content Include="Content\images\SUFija\ico_benefits_off.svg" />
+    <Content Include="Content\images\SUFija\ico_call.png" />
+    <Content Include="Content\images\SUFija\ico_close.svg" />
+    <Content Include="Content\images\SUFija\ico_clean.svg" />
+    <Content Include="Content\images\SUFija\ico_client.svg" />
+    <Content Include="Content\images\SUFija\ico_deco.svg" />
+    <Content Include="Content\images\SUFija\ico_router.svg" />
+    <Content Include="Content\images\SUFija\ico_equipos%402x.png" />
+    <Content Include="Content\images\SUFija\ico_additional_information.svg" />
+    <Content Include="Content\images\SUFija\ico_internet.svg" />
+    <Content Include="Content\images\SUFija\ico_modem.svg" />
+    <Content Include="Content\images\SUFija\ico_new_package.svg" />
+    <Content Include="Content\images\SUFija\ico_node.svg" />
+    <Content Include="Content\images\SUFija\ico_nuevo_plan.svg" />
+    <Content Include="Content\images\SUFija\ico_otros.svg" />
+    <Content Include="Content\images\SUFija\ico_default.svg" />
+    <Content Include="Content\images\SUFija\ico_person.svg" />
+    <Content Include="Content\images\SUFija\ico_phone.svg" />
+    <Content Include="Content\images\SUFija\ico_current_package.svg" />
+    <Content Include="Content\images\SUFija\ico_servicios_adicionales.svg" />
+    <Content Include="Content\images\SUFija\ico_servicios_principales%402x.svg" />
+    <Content Include="Content\images\SUFija\ico_servicios_principales.svg" />
+    <Content Include="Content\images\SUFija\ico_summary.svg" />
+    <Content Include="Content\images\SUFija\ico_screen.svg" />
+    <Content Include="Content\images\SUFija\ico_additional_services.svg" />
+    <Content Include="Content\images\SUFija\ico_core_services.svg" />
+    <Content Include="Content\images\SUFija\ico_telefono.svg" />
+    <Content Include="Content\images\SUFija\ico_traslado_externo.svg" />
+    <Content Include="Content\images\SUFija\ico_traslado_externo_of.svg" />
+    <Content Include="Content\images\SUFija\ico_traslado_interno.svg" />
+    <Content Include="Content\images\SUFija\ico_traslado_interno_of.svg" />
+    <Content Include="Content\images\SUFija\ico_update.svg" />
+    <Content Include="Content\images\SUFija\ico_validar_plano.svg" />
+    <Content Include="Content\images\SUFija\img_3play_1.png" />
+    <Content Include="Content\images\SUFija\ico_detailed.svg" />
+    <Content Include="Content\images\SUFija\ico_detailed_off.svg" />
+    <Content Include="Content\images\SUFija\ico_speech.svg" />
+    <Content Include="Content\images\SUFija\ico_speech_off.svg" />
+    <Content Include="Areas\AdditionalDecos\Scripts\Bridge.js" />
+    <Content Include="Content\css\bootstrap-multiselect-v2.css" />
+    <Content Include="Areas\AdditionalDecos\Scripts\Index.js" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\claro-fw.css" />
+    <Content Include="Content\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\css\fonts.css" />
+    <Content Include="Content\css\jquery.dataTables.select.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\SUFija\loading_Claro.gif" />
+    <Content Include="Content\Lib\BloqueoF12.js" />
+    <Content Include="Content\Lib\bootstrap-datepicker.js" />
+    <Content Include="Content\Lib\bootstrap-multiselect-v2.js" />
+    <Content Include="Content\Lib\bootstrap.js" />
+    <Content Include="Content\Lib\dataTables.bootstrap.min.js" />
+    <Content Include="Content\Lib\jquery-2.0.0.js" />
+    <Content Include="Content\Lib\jquery-ui.js" />
+    <Content Include="Content\Lib\jquery.blockUI.js" />
+    <Content Include="Content\Lib\jquery.dataTables.min.js" />
+    <Content Include="Content\Lib\jquery.dataTables.select.js" />
+    <Content Include="Content\Lib\jquery.numeric.js" />
+    <Content Include="Content\Lib\moment-es.js" />
+    <Content Include="Content\Lib\moment.js" />
+    <Content Include="Content\Lib\process-steps.js" />
+    <Content Include="Content\Scripts\polyfill.js" />
+    <Content Include="Content\Scripts\ReingApp.js" />
+    <Content Include="packages.config" />
+    <Content Include="Areas\AdditionalDecos\Views\web.config" />
+    <Content Include="Areas\AdditionalDecos\Views\Home\Index.cshtml" />
+    <Content Include="Areas\AdditionalDecos\Views\Home\CustomerData.cshtml" />
+    <Content Include="Areas\AdditionalDecos\Views\Redirect\Bridge.cshtml" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\AdditionalDecos\Views\Home\Scheduling.cshtml" />
+    <Content Include="Areas\AdditionalDecos\Views\Home\SummaryPackage.cshtml" />
+    <Content Include="Areas\AdditionalDecos\Views\Home\Summary.cshtml" />
+    <Content Include="Content\fonts\Roboto-Regular.woff" />
+    <Content Include="Content\fonts\Roboto-Regular.woff2" />
+    <Content Include="Content\fonts\Lato-Regular.woff" />
+    <Content Include="Content\fonts\Lato-Regular.woff2" />
+    <Content Include="Areas\AdditionalDecos\Views\Home\AdditionalDecos.cshtml" />
+    <Content Include="Areas\AdditionalDecos\Views\Home\ClientInform.cshtml" />
+    <Content Include="Areas\AdditionalDecos\Views\Home\SummaryAddDecos.cshtml" />
+    <None Include="Properties\PublishProfiles\SIAC-Reingenieria.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\AdditionalDecos\Scripts\AdditionalDecos.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\AdditionalDecos\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\AdditionalDecos\Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\AdditionalDecos\Controllers\HomeController.cs" />
+    <Compile Include="Areas\AdditionalDecos\Controllers\RedirectController.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\Audit\AuditResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\CargaInicialCustomers\AdditionalServicesResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\CargaInicialCustomers\ConfigurationResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\CargaInicialCustomers\CoreServicesResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\CargaInicialCustomers\IgvResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\ConfigurationForm.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DataPower\FaultResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DataPower\HeaderReq.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DataPower\HeaderRequest.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DataPower\HeaderRes.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DataPower\HeaderResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DataPower\HeaderStatusResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\InitialData\AdditionalServicesResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\InitialData\ConfigurationResponse.cs" />
+	<Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\DatosAdicionalesRequest.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\DatosAdicionalesResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\FixedPlanResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaCentroPoblados.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaEdificios.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaPlanos.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaProgramaHorario.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaSubTiposTrabajo.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaTipificacionRegla.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaTipoInterior.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaTiposTrabajo.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaTipoUrbanizacion.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaTipoVia.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaUbicaciones.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\Motivos.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\TransaccionProducto.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\FranjaHoraria\FranjaHorariaRequest.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\FranjaHoraria\FranjaHorariaResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\FranjaHoraria\FranjaHorarioCapacity.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\GestionCuadrillas\CancelarTOARequest.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\GestionCuadrillas\CancelarTOAResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\GestionCuadrillas\ReservaTOARequest.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\GestionCuadrillas\ReservaTOAResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\InitialData\AdditionalFixedDataRequest.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\InitialData\AdditionalFixedDataResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\InitialData\CoreServicesResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\InitialData\CustomerInformationResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\InitialData\FixedPlanDetailResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\InitialData\InitialDataRequest.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\InitialData\InitialDataResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\InitialData\WorkSubTypesResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\Redirect\RedirectRequest.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\Redirect\RedirectResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\AdditionalDecosAreaRegistration.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\Transversal\GuardarDatosRequest.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\Transversal\GuardarDatosResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\VisitaTecnica\VisitaTecnicaRequest.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\VisitaTecnica\VisitaTecnicaResponse.cs" />
+    <Compile Include="Areas\AdditionalDecos\Utils\BundleConfig.cs" />
+    <Compile Include="Areas\AdditionalDecos\Utils\Common.cs" />
+    <Compile Include="Areas\AdditionalDecos\Utils\RestService.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62411</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63928/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "Bridge";
+    Layout = "~/Areas/AdditionalDecos/Views/Shared/_Layout.cshtml";
+}
+
+<div id="dRedirectContent" data-sequence="@ViewBag.sequence"></div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@System.Web.Optimization.Scripts.Render("~/bundles/AdditionalDecos/Redirect")
+

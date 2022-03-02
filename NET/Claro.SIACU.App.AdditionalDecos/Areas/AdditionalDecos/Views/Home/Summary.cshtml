@@ -1,0 +1,110 @@
+﻿<!-- Modal -->
+
+<style>
+    .spanAddEquipment {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 29px;
+        text-align: center;
+    }
+    .spanAddEquipmentPlus {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 47px;
+        text-align: center;
+        color: #FF0000;
+    }
+
+</style>
+
+<div class="bg-container col-md-12 column-layout" style="padding: 0;">
+    <div class="customer-data-title box">
+        <div class="customer-data-title-items customer-data-title-icon">
+            <span class="summary-icon"></span>
+        </div>
+        <div class="customer-data-title-items customer-data-title-label">
+            <span>RESUMEN</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li role="presentation" class="nav-tabs active">
+                    <a href="#benefits" aria-controls="benefits" role="tab" data-toggle="tab">
+                        <div class="customer-data-title box">
+                            <div class="customer-data-title-items customer-data-title-icon">
+                                <span class="detailed-icon"></span>
+                            </div>
+                            <div class="customer-data-title-items customer-data-title-label">
+                                <span>DETALLADO</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="benefits">
+                    <div id="DivContenInstallEquipment">
+                    <div class="col-sm-12 customer-data-title box" style="padding-top: 15px; padding-bottom: 15px">
+                        <div style="font-family: Roboto; font-style: normal; font-weight: bold; font-size: 15px; line-height: 18px">
+                            <span>INSTALACIÓN DE DECOS</span>
+                        </div>
+                    </div>
+
+                    <div class="plan-resume col-sm-10 col-sm-offset-1" id="DivInstallEquipment">
+                    </div>
+                    </div>
+                    <div id ="DivContenUnInstallEquipment">
+                    <div class="col-sm-12 customer-data-title box" style="padding-top: 15px; padding-bottom: 15px">
+                        <div style="font-family: Roboto; font-style: normal; font-weight: bold; font-size: 15px; line-height: 18px">
+                            <span>DESINSTALACIÓN DE DECOS</span>
+                        </div>
+                    </div>
+
+                    <div class="plan-resume col-sm-10 col-sm-offset-1" style="background: #FCEFEE; border: 2px solid #DD5F57;" id="DivUninstallEquipment">
+                    </div>
+                    </div>
+                    <div class="col-sm-10" style="margin-top: 30px; padding-left: 10px;">
+                        <div id="resumeContent"></div>
+                            @*<b>--------------- SERVICIOS ACTIVADOS ---------------</b><br />
+                        <div id="DivInstallDetail"></div>
+                        <br />
+
+                        <b>--------------- SERVICIOS DESACTIVADOS ---------------</b><br />
+                        <div id="DivUninstallDetail"></div>
+                        <br />
+
+                        <b>Costo Instalación </b> S/ <span id="SpanSumLoyalty"></span><br />
+                        <b>Cargo Fijo Actual </b> S/ <span id="SpanSumPrice"></span><br />
+                        <b>Cargo Equipos </b> S/ <span id="SpanSumEquipment"></span><br />
+                        <b>Cargo Equipos Retirados </b> S/ <span id="SpanResEquipment"></span><br />
+                        <b>Nuevo Cargo Fijo  </b> S/ <span id="SpanSumNewPrice"></span><br />
+                        <br />
+
+                        <b>--------------- TIPO DE TRABAJO A REALIZAR ---------------</b><br />
+                        <b>TIPO DE TRABAJO: </b> <span id="SpanSumTypeWork"></span><br />
+                        <b>Sub Tipo de Trabajo: </b> <span id="SpanSumSubTypeWork"></span><br />
+                        <b>Fecha de Visita: </b> <span id="SpanSumCalendar"></span><br />
+
+                        <div style="display:none;">
+                            <b>*<span id="SpanSumVisit"></span> Visita</b>
+                        </div>
+                                <br /><br />*@
+
+                    </div>
+                    <br />
+                            <div class="col-md-12 text-center">
+                                <button id="btnCopy" name="bntCopy" class="btn btn-style btn-sm">Copiar</button>
+                            </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

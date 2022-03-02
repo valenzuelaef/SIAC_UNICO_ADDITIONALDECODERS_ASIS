@@ -1,0 +1,94 @@
+﻿<style>
+    .bg-container-bg {
+        background-image: url(../../Content/Images/SUFija/claro-bg.png);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        min-height: 450px;
+    }
+</style>
+
+<div class="bg-container bg-container-bg">
+
+    <!--Title-->
+    <div class="row">
+        <div class="customer-data-title">
+            <div class="customer-data-title-items customer-data-title-icon">
+                <span class="summary-icon"></span>
+            </div>
+            <div class="customer-data-title-items customer-data-title-label">
+                <span>MIS PUNTOS DE TV ADICIONALES</span>
+            </div>
+        </div>
+    </div>
+
+    <!--Listado Decos-->
+    <table class="table table-borderless text-center recurrentService" id="tblAdditionals">
+        <thead>
+            <tr>
+                <th class="Table-Tittle">Servicios</th>
+                <th class="Table-Tittle text-right" style="margin-left: 5px">Promoción</th>
+                <th class="Table-Tittle text-right">Cargo Fijo</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="row" id="DivSummary">
+    </div>
+
+    <div class="row">
+        <!--Descuento por Campaña-->
+        <div class="col-sm-12" style="background: #9D9D9D; border-radius: 5px; height: auto; padding: 10px; margin-top: 5px">
+            <div class="col-sm-6">
+                <span style="font-weight: bold; font-size: 16px; color: #FFFFFF">Cargo Fijo Regular</span>
+            </div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <span class="text-right" style="font-weight: bold; font-size: 16px; color: #FFFFFF">S/</span>
+                <span style="font-weight: bold; font-size: 16px; color: #FFFFFF; float: right; " id="RegularPrice">00.00</span>
+            </div>
+        </div>
+        <!--End Descuento por Campaña-->
+        <!--Costo Box-->
+        <div class="col-sm-12" style="background: #DD5F57; border-radius: 5px; height: auto; padding: 10px; margin-top: 5px">
+            <div class="col-sm-6">
+                <span style="font-weight: bold; font-size: 16px; color: #FFFFFF; ">Cargo Fijo Promocional</span>
+            </div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <span class="text-right" style="font-weight: bold; font-size: 16px; color: #FFFFFF">S/</span>
+                <span style="font-weight: bold; font-size: 16px; color: #FFFFFF; float: right;" id="FixedPromotionalPrice">00.00</span>
+            </div>
+        </div>
+        <!--End Costo Box-->
+        <!--Consto Instalación-->
+        <div class="col-sm-12" style="margin-top: 14px">
+            <div class="col-sm-6">
+                <span style="font-size: 15px; color: #837F7F">Costo de Instalación</span>
+            </div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <span class="text-right" style="font-size: 15px; color: #837F7F">S/</span>
+                <span style="font-size: 15px; color: #837F7F; float: right;" id="InstalationPrice">10.00</span>
+            </div>
+        </div>
+        <!--End Costo Instalación-->
+        <div class="col-sm-12" style="margin-top: 14px">
+            <div class="col-sm-4">
+                <input type="checkbox" name="name" value=" " id="chkFideliza" />
+                <span style="font-size: 15px; color: #837F7F; font-weight: bold">Fidelizar</span>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-1 check-text text-right">
+            <span id="AddDecos" style="font-weight: bold; font-size: 12px; color: #000000; border: 1px solid #ddd !important; padding: 10px; background: #E6FFFA">0</span>
+        </div>
+        <div class="col-sm-5 check-text text-left">
+            <span style="font-weight: bold; font-size: 12px; color: #000000">Decos Agregados</span>
+        </div>
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

@@ -1,0 +1,1944 @@
+﻿/*Index Claro FrameWork CSS
+
+    1.  Container Classes
+    2.  Table Classes
+    3.  Header Classes
+    4.  Foorter Classes
+    5.  Customer Panel Classes
+    6.  Tree View Classes
+    7.  Modal General Classes
+    8.  Titles Classes
+    9.  Background Icons Classes
+    10. Modal Alert Classes
+    11. Steps-Transtions Classes
+    12. Style-Checkbox Classes
+    13. Buttons Classes
+ */
+
+/* 1. Container - Start */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: #F0F3F5;
+    font-family: 'Roboto', sans-serif;
+    color: #585858 !important;
+    font-size: 12px;
+    line-height: 1.42857143;
+}
+
+.bg-container {
+    padding: 15px;
+    background: #FFFFFF;
+    border: 1px solid rgba(157, 156, 156, 0.25);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+/*.bg-container .row {
+    margin-bottom: 10px !important;
+}*/
+
+.bg-container-bg {
+    background-image: url('../../Content/Images/SUFija/claro-bg.png');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    min-height: 638px;
+}
+
+.bg-container .box-title-transfer {
+    height: 53px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.bg-container .box-title-transfer span {
+    font-weight: bold;
+    font-style: normal;
+    font-family: Roboto;
+    vertical-align: middle;
+}
+
+#navbar-body {
+    padding: 10px !important;
+}
+
+.principal-row {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.middle-container {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.column-layout {
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+.column-margin-layout {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+/* 1. Container - End */
+
+
+/* 2. Table - Start */
+
+.table{
+    margin-bottom: 10px;
+}
+
+th{
+    font-size: 14px !important;
+}
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th {
+    border: none;
+}
+
+.table-borderless > tbody > tr > .td-cp {
+    font-weight: bold;
+    font-size: 12px !important;
+}
+/* 2. Table - End */
+
+
+/* 3. Header Classes - Start */
+.bg-header {
+    background: #FAFBFC !important;
+    margin-bottom:0px !important;
+}
+
+.navbar-tx-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px !important;
+    line-height: 18px;
+    color: #fff !important;
+    background-color: #da291c !important;
+}
+
+.navbar-header-lblusr {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px !important;
+    line-height: 18px;
+    color: #fff;
+    background-color: #da291c !important;
+    margin: 5px 0 0 0;
+}
+
+.navbar-header-usr {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px !important;
+    line-height: 20px;
+    color: #fff;
+    background-color: #da291c !important;
+    margin: 0 0 5px 0;
+}
+
+.separator-vertical {
+    border-left: 1px solid #E9EAEB;
+    height: 40px;
+    margin: 5px 0 5px 0;
+    padding-right: 20px;
+}
+
+.navbar-icon-close {
+    margin: 10px;
+    border:0;
+    width: 30px;
+    height: 30px;  
+    display: inline-block;
+    border-radius: 50% !important;
+    background: url("/Content/Images/SUFija/ico_close.svg") no-repeat center;        
+}
+
+.navbar-info {
+    padding: 7px 10px 10px 10px;
+    margin: 5px 0 5px 0;
+    background-color: #F0F3F5;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.navbar-info-button {
+    background-color: #F0F3F5;
+    color: #fff !important;
+    background-color: #da291c !important;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    height: 40px;
+    line-height: 15px;
+    margin: 5px 0 5px 0;
+}
+
+.navbar-info-button:hover, 
+.navbar-info-button:focus {
+    color: #ddd !important;
+}
+
+.navbar-info-left {
+    width: 140px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+    color: #fff !important;
+    background-color: #da291c !important;
+}
+
+.navbar-info-badge-node {
+    display: inline-block;
+    min-width: 10px;
+    width: 50px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #7B7B7B;
+    color: black;
+    font-size: 11px;
+}
+
+.navbar-info-icon-node {
+    position:relative;
+    top: 3px;
+    width: 22px;
+    height: 18px;
+    display: inline-block;
+    line-height: 1;
+    background: url("/Content/Images/SUFija/ico_node.svg") no-repeat center; 
+}
+
+.navbar-info-icon-check {
+    position:relative;
+    top: 3px;
+    width: 22px;
+    height: 18px;
+    display: inline-block;
+    line-height: 1;
+    background: url("/Content/Images/SUFija/ico_update.svg") no-repeat center; 
+}
+
+.navbar-node-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.navbar-node-group > .navbar-info {
+  position: relative;
+  float: left;
+}
+
+.navbar-node-group > .navbar-info:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.navbar-node-group > .navbar-info:first-child {
+  margin-left: 0;
+}
+
+.navbar-node-group > .navbar-info:first-child:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.navbar-node-group > .navbar-info:last-child:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.navbar-node-group > .navbar-node-group {
+  float: left;
+}
+.navbar-node-group > .navbar-node-group:not(:first-child):not(:last-child) > .navbar-info {
+  border-radius: 0;
+}
+
+.navbar-node-group > .navbar-node-group:first-child:not(:last-child) > .navbar-info:last-child{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.navbar-node-group > .navbar-node-group:last-child:not(:first-child) > .navbar-info:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* 3. Header Classes - End */
+
+
+/* 4. Footer Classes - Start */
+.footer {
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:50px;
+    background-color:#FAFBFC;
+    padding:7.5px 15px 7.5px 5px;
+    text-align: right;
+    border: 1px solid #e7e7e7;
+}
+
+.btn-transaction {
+    background-color: #837F7F;
+    height: 30px !important;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF
+}
+
+.btn-transaction:hover, 
+.btn-transaction:focus {
+    color: #FFFFFF !important;
+    opacity:0.8;
+}
+/* 4. Footer Classes - End */
+
+
+/* 5. Customer Panel Classes - Start */
+.plan {
+    height: 89px;
+    color: #FFFFFF;
+    padding: 20px 0px;
+    background: #da291c;
+    font-weight: bold;
+    font-style: normal;
+}
+
+    .plan .description {
+        font-size: 1.9rem;    
+    }
+
+h4.panel-title.font-size-fixed {
+    color: #585858 !important;
+    font-size: 13px !important;
+}
+
+h4.panel-title > span.partial-cost {
+    margin: 4.5px 10px 4.5px 2px;
+    display: none;
+}
+    
+
+/* Bootstrap override */
+.panel {  
+    box-shadow: none !important;
+}
+
+.panel-title { 
+    font-size: 15px !important;
+    font-weight: bold;
+}
+
+    .panel-title > a, .panel-title > small, 
+    .panel-title > .small, .panel-title > small > a, 
+    .panel-title > .small > a {
+            color: #585858 !important;
+    }
+
+.panel-heading {
+    background: none !important;
+    background-color: #F0F3F5 !important;
+    border-radius: 0 !important;
+    margin: 0 5px !important;
+}
+
+.panel-group {
+    margin: 10px 0 !important;
+}
+
+    .panel-group .panel {
+        margin-bottom: 10px;
+    }
+
+    .panel-group .panel-heading + .panel-collapse > .panel-body, 
+    .panel-group .panel-heading + .panel-collapse > .list-group {
+        border: none !important;
+    }
+
+.panel-default {
+    border: none;
+}
+/* Bootstrap override */
+
+/* 5. Customer Panel Classes - End */
+
+
+/* 6. Tree View Classes - Start */
+.tree ul {
+    margin-left: 20px;
+}
+
+.tree li {
+    list-style-type: none;
+    margin: 10px;
+    position: relative;
+}
+
+.tree li::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -20px;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0 0 0 0px;
+    width: 20px;
+    height: 15px;
+}
+
+.tree li::after {
+    position: absolute;
+    content: "";
+    top: 8px;
+    left: -20px;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-radius: 0px 0 0 0;
+    width: 20px;
+    height: 100%;
+}
+
+.tree li:last-child::after {
+    display: none;
+}
+
+.tree li:last-child:before {
+    border-radius: 0 0 0 5px;
+}
+
+ul.tree > li:first-child::before {
+    display: none;
+}
+
+ul.tree > li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+.tree li a {    
+    border-radius: 5px;
+    padding: 2px 5px;
+    color: #9D9D9D;
+}
+
+.tree li a:hover, .tree li a:hover + ul li a,
+.tree li a:focus, .tree li a:focus + ul li a {
+    background: #ccc;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.tree li a:hover + ul li::after, .tree li a:focus + ul li::after,
+.tree li a:hover + ul li::before, .tree li a:focus + ul li::before
+.tree li a:hover + ul::before, .tree li a:focus + ul::before
+.tree li a:hover + ul ul::before, .tree li a:focus + ul ul::before {
+    border-color: #000; /*connector color on hover*/
+}
+/* 6. Tree View Classes - End */
+
+
+/* 7. Modal General Classes - Start */
+.modal {
+     position: absolute !important;
+     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+     box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+     box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+     border: 1px solid rgba(0, 0, 0, .2);
+     border-radius: 4px;
+     -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+     box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+     padding-left: initial !important;  
+}
+
+.modal-open .modal {
+	overflow: hidden;    
+}
+
+.modal-dialog {
+    margin: auto;
+    width: auto;
+    height: auto;    
+}
+
+.modal-header {
+    padding: 10px 15px 5px;
+}
+
+ modal-content {
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;    
+}
+
+.modal-title {
+    font-size: 15px;    
+}
+
+.modal-controlbox > button {
+	background-color: transparent;
+	border: 0;    
+}
+
+.modal-loading {
+	background-size: 50.5px 50.9px;    
+}
+
+.claro-gris {
+	background-color: #FFFFFF;    
+}
+
+.claro-modal-tabla {
+    font-size: 11px;    
+}
+
+.claro-modal-tabla > tbody > tr > td, .claro-modal-tabla > tbody > tr > th {
+    padding-bottom: 2px !important;  
+}
+ /* 7. Modal General Classes - End */
+
+
+/* 8. Titles Classes - Start */
+.customer-data-title {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.customer-data-title > .customer-data-title-items {
+  position: relative;
+  float: left;
+}
+
+.customer-data-title .customer-data-title-icon {
+    width: auto;
+    padding: 5px 5px 5px 12px;
+}
+
+    .customer-data-title .customer-data-title-icon > span {
+        margin-right: 5px;
+        display: inline-block;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        background-color: #F0F3F5;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+
+.customer-data-title .customer-data-title-label {
+    width: auto;
+    padding-top: 18px;
+}
+
+    .customer-data-title .customer-data-title-label > span {
+        font-size: 13px;
+        font-family: Roboto;
+        font-weight: bold;
+        font-style: normal;
+    }
+
+.customer-data-title .customer-data-title-price {
+    width: auto;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: normal;  
+    padding-right: 20px;  
+}
+
+    .customer-data-title .customer-data-title-price .data-igv {
+        font-size: 10px;
+        line-height: 12px;
+        text-align: center;
+        margin-bottom: 2px;
+    }
+
+li[role=presentation] > a {
+    opacity: 0.5;
+    color: #747D84;
+    border: none !important;
+} 
+
+li[role=presentation].active > a {
+    opacity: 1;
+    color: #555;
+    border-right: 1px solid #ddd !important;
+    border-bottom: 3px solid #DD5F57 !important;
+}   
+
+li[role=presentation].active:last-child > a {   
+    border-right: none !important;
+    border-left: 1px solid #ddd !important;
+}   
+/* 8. Titles Classes - End */ 
+
+
+/* 9. Background Icons Classes - Start */
+span.package-icon {
+    background-image: url("/Content/Images/SUFija/ico_default.svg");
+}
+
+span.pqt-actual-icon {
+    background-image: url("/Content/Images/SUFija/ico_current_package.svg");
+}
+
+span.new-plan-icon {
+    background-image: url("/Content/Images/SUFija/ico_new_package.svg");
+}
+
+span.new-service-core-icon {
+    background-image: url("/Content/Images/SUFija/ico_core_services.svg");
+}
+
+span.new-service-additional-icon {
+    background-image: url("/Content/Images/SUFija/ico_additional_services.svg");
+}
+
+span.summary-icon {
+    background-image: url("/Content/Images/SUFija/ico_summary.svg");
+}
+
+span.scheduling-icon {
+    background-image: url("/Content/Images/SUFija/ico_scheduling.svg");
+}
+
+span.additional_info-icon {
+    background-image: url("/Content/Images/SUFija/ico_additional_information.svg");
+}
+
+span.info_resumen-icon {
+    background-image: url("/Content/Images/SUFija/ico_resumen.svg");
+}
+
+span.info_gestion-icon {
+    background-image: url("/Content/Images/SUFija/ico_servicios_principales.svg");
+}
+
+span.info_validar-plano-icon {
+    background-image: url("/Content/Images/SUFija/ico_validar_plano.svg");
+}
+a span.benefits-icon {
+    background-image: url("/Content/Images/SUFija/ico_benefits_off.svg");
+}
+
+a span.detailed-icon {
+    background-image: url("/Content/Images/SUFija/ico_detailed_off.svg");
+}
+
+a span.speech-icon {
+    background-image: url("/Content/Images/SUFija/ico_speech_off.svg");
+}
+
+.active > a span.benefits-icon {
+    background-image: url("/Content/Images/SUFija/ico_benefits.svg");
+}
+
+.active > a span.detailed-icon {
+    background-image: url("/Content/Images/SUFija/ico_detailed.svg");
+}
+
+.active > a span.speech-icon {
+    background-image: url("/Content/Images/SUFija/ico_speech.svg");
+}
+
+.divNoSelect-transfer span.ico_traslado_externo {
+	background: #FFFFFF url("/Content/images/SUFija/ico_traslado_externo_of.svg") no-repeat center;
+}
+
+.divNoSelect-transfer span.ico_traslado_interno {
+	background: #FFFFFF url("/Content/images/SUFija/ico_traslado_interno_of.svg") no-repeat center;
+}
+
+span.package-icon-VisitingOrder {
+    width: 40px !important;
+    height: 40px !important;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: 50% !important;
+    background: #F0F3F5 url("/Content/Images/SUFija/ico_orden_visita.svg") no-repeat center;
+}
+
+span.package-icon-Interaccion {
+    width: 40px !important;
+    height: 40px !important;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: 50% !important;
+    background: #F0F3F5 url("/Content/Images/SUFija/ico_paquete.svg") no-repeat center;
+}
+
+.package-icon-agen {
+    width: 40px !important;
+    height: 40px !important;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: 50% !important;
+    background: #F0F3F5 url("/Content/Images/SUFija/ico_agendamiento.svg") no-repeat center;
+}
+.package-icon-adic {
+    width: 40px !important;
+    height: 40px !important;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: 50% !important;
+    background: #F0F3F5 url("/Content/Images/SUFija/ico_info_adicional.svg") no-repeat center;
+}
+
+.ico_traslado_externo {
+	width: 40px !important;
+	height: 40px !important;
+	margin-right: 5px;
+	display: inline-block;
+	border-radius: 50% !important;
+	background: #FFFFFF url("/Content/images/SUFija/ico_traslado_externo.svg") no-repeat center;
+}
+
+.ico_traslado_interno {
+	width: 40px !important;
+	height: 40px !important;
+	margin-right: 5px;
+	display: inline-block;
+	border-radius: 50% !important;
+	background: #FFFFFF url("/Content/images/SUFija/ico_traslado_interno.svg") no-repeat center;
+}
+
+.ico_face_si_on {
+	position: relative;
+	top: 2px;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	line-height: 1;
+	background: url("/Content/images/SUFija/ico_face_si_on.svg") no-repeat center;
+}
+
+.span.ico_face_si_on {
+	font-weight: bold;
+	color: #1ED688;
+}
+.ico_face_si_off {
+	position: relative;
+	top: 2px;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	line-height: 1;
+	background: url("/Content/images/SUFija/ico_face_si_off.svg") no-repeat center;
+}
+
+.ico_face_no_on {
+	position: relative;
+	top: 2px;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	line-height: 1;
+	background: url("/Content/images/SUFija/ico_face_no_on.svg") no-repeat center;
+}
+
+.ico_face_no_off {
+	position: relative;
+	top: 2px;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	line-height: 1;
+	background: url("/Content/images/SUFija/ico_face_no_off.svg") no-repeat center;
+}
+
+.customer-data-icon-user {
+	top:3px;
+	position: relative;
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	line-height: 1;
+	background: url("/Content/Images/SUFija/ico_client.svg") no-repeat center;
+}
+
+.customer-data-icon-services {
+	position: relative;
+	width: 22px;
+	height: 18px;
+	display: inline-block;
+	line-height: 1;
+	background: url("/Content/Images/SUFija/ico_equipos@2x.png") no-repeat center;
+}
+
+
+.ico_cobertura_off {
+	position: relative;
+	top: 2px;
+	width: 40px;
+	height: 20px;
+	display: inline-block;
+	line-height: 1;
+	background: url("/Content/images/SUFija/ico_cobertura_off.svg") no-repeat center;
+}
+
+
+.info_cobertura-icon {
+	position: relative;
+	top: 2px;
+	width: 30px;
+	height: 20px;
+	display: inline-block;
+	line-height: 1;
+	align-content:center;
+	background: url("/Content/images/SUFija/ico_val_cobertura.svg") no-repeat center;
+/*fill:#585858 !important;*/
+}
+
+.info_mapa-icon {
+	position: relative;
+	top: 2px;
+	width: 40px;
+	height: 20px;
+	display: inline-block;
+	line-height: 1;
+	background: url("/Content/images/SUFija/ico_info_mapa.svg") no-repeat center;
+}
+
+/* 9. Background Icons Classes - End */
+
+
+/* 10. Modal Alert Classes - Start */
+.modal-alert-content {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.modal-alert-content .modal-alert-header {
+    height: 70px;
+    border-bottom: none;
+    padding: 15px 15px 5px !important;
+}
+
+.modal-alert-content .modal-alert-header > img {
+    margin-right: 15px;
+}
+
+.modal-alert-content .modal-body {
+    margin-left: 60px;
+    padding: 5px 20px 5px 15px;
+}
+
+.modal-alert-content .modal-alert-footer {
+    border-top: none;
+}
+
+.modal-alert-content .modal-alert-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+	color: #DD5F57;
+}
+
+.modal-button-confirm {  
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #DD5F57;
+    background:none;
+    text-transform: uppercase;
+}
+
+.modal-button-cancel {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #837F7F;
+    background:none;
+    text-transform: uppercase;
+}
+/* 10. Modal Alert Classes - End */
+
+
+/* 11. Steps-Transtions - Start */  
+.transaction-process {
+  height: 20px;
+  margin-top: 23px;
+  overflow: hidden;
+  background-color: #C4C4C4;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-process-step {
+    display: table;
+    width: 100%;
+    padding-top: 5px;
+    position:absolute;
+}
+
+.transaction-button-Steps {
+    background-color: #1f97ae;
+    text-shadow: -1px 1px 1px rgba(3, 3, 3, 0.47) !important;
+    border-radius: 4px;
+    color: white;
+}
+
+    .transaction-button-Steps:hover {
+        opacity: 0.8;
+        color: white;
+    }
+
+    .transaction-button-Steps .focus {
+        color: white;
+    }
+
+    .transaction-button-Steps:focus {
+        color: white;
+    }
+
+    .transaction-button-Steps[disabled] {
+        opacity: 0.5 !important;
+        filter: alpha(opacity=100) !important;
+    }
+
+.transaction-button-Steps.active {
+    opacity:0.2;
+}
+
+.transaction-progress-Steps {
+    padding: 35px 0 35px 0;
+}
+
+.transaction-progress-Steps-2-step {
+    padding: 35px 100px 35px 100px;
+}
+
+.transaction-bar-step {
+    height: 2px !important;
+}
+
+.transaction-container-step {
+    margin: 0px 10% 0px 10%; 
+    position:relative;
+}
+
+.process-row-step {
+    display: table-row;
+}
+
+.process-row-step:before {
+    top: 40px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    background-color: #ccc;
+    z-order: 0;
+}
+
+.btn-circle-step {
+    width: 10px;
+    height: 20px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 50%;
+    margin-top: 0px;
+    background: url("/Content/Images/SUFija/ico_buena_on.svg") no-repeat center;
+    padding-left: 0em;
+}
+
+.btn-default-Step {
+     width: 10px;
+     height: 20px;
+     text-align: center;
+     font-size: 30px;
+     border: 0px;
+     margin-top: 0px;
+     background: #FFF  url("/Content/Images/SUFija/ico_buena_off.svg") no-repeat center;
+}
+
+.process-2-step {
+    display: table;
+    width: 100%;
+    padding-top: 5px;
+    position:absolute;
+    padding-left:100px;
+    padding-right: 100px;
+}
+
+.process-step-part {
+    position: relative;
+    display: table-cell;
+}
+
+.process-step-part p {
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+.process-step-part .btn:focus {
+    outline: none;
+}
+
+.process-step-part button[disabled] {
+    opacity: 0.5 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.process-step-part > span {
+    width: 40px !important;
+    height: 40px !important;
+    display: inline-block;
+    border-radius: 50% !important;
+}
+
+.process-step-part > span.firstSteps-icon-active {
+    background: #FFFFFF url("/Content/images/SUFija/ico_new_pqt.svg") no-repeat center;
+}
+
+.process-step-part > span.secondSteps-icon-active {
+    background: #FFFFFF url("/Content/images/SUFija/ico_agendamiento.svg") no-repeat center;
+}
+
+.process-step-part > span.thirdSteps-icon-active {
+    background: #FFFFFF url("/Content/images/SUFija/ico_resumen.svg") no-repeat center;
+}
+
+.process-step-part > span.secondSteps-icon-passive {
+    background: #FFFFFF url("/Content/images/SUFija/ico_agendamiento_off.svg") no-repeat center;
+}
+
+.process-step-part > span.thirdSteps-icon-passive {
+    background: #FFFFFF url("/Content/images/SUFija/ico_resumen_off.svg") no-repeat center;
+}
+
+.process-step-part-2 {
+    width:50%;
+}
+
+.process-step-part-2-left {
+    width:50%;
+    text-align: left;
+}
+
+.process-step-part-2-right {
+    width:50%;
+    text-align: right;
+}
+
+.process-step-part-3 {
+    text-align: center;
+    width: 33.33333333%;
+}
+
+.process-step-part-3-left {
+    text-align: left;    
+    width: 33.33333333%;
+}
+
+.process-step-part-3-right {
+    text-align: right;
+    width: 33.33333333%;
+}
+
+.process-step-part-4 {
+    width:25%;
+    text-align:center;
+}
+
+.process-step-part-4-left {
+    width:25%;
+    text-align:left;
+}
+
+.process-step-part-4-right {
+    width:25%;
+    text-align:right;
+}
+
+.process-step-part-5 {
+    width: 20%;
+    text-align: center;
+}
+
+.process-step-part-5-left {
+    width: 20%;
+    text-align: left;
+}
+
+.process-step-part-5-right {
+    width: 20%;
+    text-align: right;
+}
+
+.process-step-part-6 {
+    text-align:center;
+    width:16.66666667%;
+}
+
+.process-step-part-6-left {
+    text-align:left;
+    width:16.66666667%;
+}
+
+.process-step-part-6-right {
+    text-align:right;
+    width:16.66666667%;
+}
+
+.process-step-part-2-left > span,
+.process-step-part-3-left > span,
+.process-step-part-4-left > span,
+.process-step-part-5-left > span,
+.process-step-part-6-left > span,
+.process-step-part-2-right > span,
+.process-step-part-3-right > span,
+.process-step-part-4-right > span,
+.process-step-part-5-right > span,
+.process-step-part-6-right > span {
+    top: 0px;
+    position: relative;
+}
+
+.process-step-part-2-left > span,
+.process-step-part-3-left > span,
+.process-step-part-4-left > span,
+.process-step-part-5-left > span,
+.process-step-part-6-left > span {
+     left: -15px;
+}
+.process-step-part-2-right > span,
+.process-step-part-3-right > span,
+.process-step-part-4-right > span,
+.process-step-part-5-right > span,
+.process-step-part-6-right > span {
+    right: -15px;
+}
+/* 11. Steps-Transtions - End */  
+
+
+/* 12. Style-Checkbox - Start */
+.inline-label {
+    display: inline !important;
+}
+
+.style-checkbox:not(:checked),
+.style-checkbox:checked {
+  position: absolute;
+  left: -9999px;
+}
+.style-checkbox:not(:checked) + label,
+.style-checkbox:checked + label {
+  position: relative;
+  padding-left: 1.3em;
+  cursor: pointer;
+}
+
+.style-checkbox:not(:checked) + label:before,
+.style-checkbox:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 1.25em; height: 1.25em;
+  border: 2px solid #ccc;
+  background: #fff;
+}
+
+.style-checkbox:not(:checked) + label:after,
+.style-checkbox:checked + label:after {
+  content: '\2713\0020';
+  position: absolute;
+  top: 0.1em; left: .05em;
+  font-size: 1.5em;
+  line-height: 0.8;
+  color: red;
+  font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+
+.style-checkbox:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.style-checkbox:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* 12. Style-Checkbox - End */
+
+
+/* 13. Buttons - Start */
+.btn-style {
+    width: 105px !important;
+    color: #fff;
+    background-color: #DD5F57; 
+    border-color: #DD5F57;
+    border-radius: 5px !important;
+}
+
+    .btn-style:hover {
+        color: #fff;
+        background-color: #DD5F57;
+    }
+    
+    .btn-style:focus {
+        color: #fff;
+    }
+
+.btn-style-long {
+    width: 155px !important;
+    color: #fff;
+    background-color: #DD5F57; 
+    border-color: #DD5F57;
+    border-radius: 5px !important;
+}
+
+.btn-style-default {
+    color: #fff;
+    background-color: #837F7F; 
+    border-color: #837F7F;
+    border-radius: 5px !important;
+}
+
+    .btn-style-default:hover {
+        color: #fff;
+        background-color: #6C6C6C;
+    }
+    
+    .btn-style-default:focus {
+        color: #fff;
+    }
+
+.btn-red-long-thick {
+    border-radius: 5px !important;
+    background-color: #da291c;
+    border-color: #da291c;
+    width:180px;
+    height: 40px !important;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+    .btn-red-long-thick:hover {
+        background: #FFFFFF;
+        color: #da291c;
+        border: 1px solid #da291c;
+        box-sizing: border-box;
+        border-radius: 4px;
+        fill:#ff0000
+    }
+
+    .btn-red-long-thick:hover span {
+        background: url("/Content/images/SUFija/ico_val_cobertura_on.svg") no-repeat center;
+    }
+
+.btn-green-long-thick {
+    border-radius: 5px !important;
+    background-color: #1ED688;
+    border-color: #1ED688   ;
+    width:180px;
+    height: 40px !important;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF
+}
+
+    .btn-green-long-thick:hover {
+        background: #FFFFFF;
+        color: #1ED688;
+        border: 1px solid #1ED688;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    .btn-green-long-thick:hover span {
+        background: url("/Content/images/SUFija/ico_cobertura_on.svg") no-repeat center;
+    }
+
+.btn-golden-long-thick {
+    border-radius: 5px !important;
+    background-color: #FF9D00;
+    border-color: #FF9D00;
+    width:180px;
+    height: 40px !important;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    align-content:center;
+}
+
+    .btn-golden-long-thick:hover {
+        background: #FFFFFF;
+        color: #FF9D00;
+        border: 1px solid #FF9D00;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+   .btn-golden-long-thick:hover span {
+        background: url("/Content/images/SUFija/ico_info_mapa_on.svg") no-repeat center;
+    }
+
+.btn-transaction-red {
+    border-radius: 5px !important;
+    background-color: #da291c;
+    border-color: #da291c;
+    height: 30px !important;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF
+}
+
+    .btn-transaction-red:hover, .btn-style:focus {
+        color: #FFFFFF !important;
+        opacity:0.8;
+    }  
+        
+    .btn-transaction-red:focus {
+        color: #FFFFFF
+    }
+
+.btn-gray {
+    background-color: #837F7F;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    height: 35px !important;
+}
+
+.btn-group button:active {
+    background-color: #ddd;
+}
+
+.btn-group button:hover {
+    background-color: #fff;
+}
+
+.btn-default:active:hover, .btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus,
+.btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+    background-color: #fff;
+}
+/* 13. Buttons - End */
+
+
+/* Generic Classes */
+
+.form-control {
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #7B7B7B;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.input-sm {
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #7B7B7B;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+option {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 13px;
+    color: #949292;
+}
+
+option:hover {
+    background-color: #FE0000;
+}
+
+.select.input-sm {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 13px;
+    color: #949292;
+}
+
+button span {
+    font-size: 13px;
+}
+
+.badge {
+    border: 1px solid #7B7B7B;
+    background-color: #fff;
+    color: #7b7b7b;
+}
+
+.name-items {
+    text-align: left;
+    padding: 8px 12px;
+}
+
+a.remove {
+    color: #DB554C !important;
+}
+
+a:hover, a:active, a:focus, a:visited {
+    text-decoration: none;
+}
+
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.customer-data-group-text {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    color: #585858 !important;
+    text-decoration: none !important;
+}
+
+.customer-data-panel-heading {
+    background: #F0F3F5 !important;
+}
+
+.customer-data-panel {
+    border-radius: 0px !important;
+    border: 0px solid transparent !important;
+}
+
+.customer-data-panel-group {
+    margin: 5px !important;
+}
+
+.customer-data-panel-body {
+    border-top: 0px solid transparent !important;
+}
+
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+    content: "\e259"; /* adjust as needed, taken from bootstrap.css */
+    float: right; /* adjust as needed */
+    color: grey; /* adjust as needed */
+    padding-top:3px
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e258"; /* adjust as needed, taken from bootstrap.css */
+}
+
+.multiselect {
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #7B7B7B;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.multiselect .caret {
+    float: right;
+    margin-top: 5px;
+}
+
+.multiselect-container {
+    width: 100% !important;
+}
+
+.tab-content {
+    padding-bottom: 0;
+}
+
+/* Bootstrap Hacks */
+.col-md-12 {
+    padding-bottom: 0px;
+}
+
+.label-customer {
+    /*font-family: Roboto;*/
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+    color: #585858;
+}
+
+.label-customer-nbold {
+    /*font-family: Roboto;*/
+    font-style: normal;    
+    font-size: 11px;
+    line-height: 15px;
+    color: #585858;
+}
+
+.input-customer {
+    /*font-family: Roboto;*/
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 15px;
+    color: #9D9D9D;
+}
+
+.ver-align-middle {
+    padding: 10% 0;
+}
+
+.modal .nav-tabs.nav-justified > .active > a, 
+.modal .nav-tabs.nav-justified > .active > a:hover, 
+.modal .nav-tabs.nav-justified > .active > a:focus {
+    border:none;
+    border-bottom:2px solid #DD5F57;
+    color: #555555;
+}
+
+.modal .nav-tabs.nav-justified > li > a, 
+.modal .nav-tabs.nav-justified > li > a:hover, 
+.modal .nav-tabs.nav-justified > li > a:focus {
+    border:none;
+    color: #555555;
+}
+
+.modal-image {
+    width: 96px;
+    height: auto;
+    position: absolute;
+    top: -47px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.tab-pane {
+    overflow-y:auto;
+}
+
+.check-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 15px;
+} 
+
+.text-left {
+    text-align: left !important;
+}
+
+.remove-padding {
+    padding: 0px !important;
+}
+
+.remove-margin {
+    margin: 0px !important;
+}
+
+.control-label-align { 
+    padding-top: 7px;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+}
+
+.filter-box {
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #7B7B7B;
+}
+  
+img {
+    margin-right: 5px;
+}
+
+.icon-collapse-bar {
+    width: 16px;
+}
+
+.icon-collapse-bar-horizontal {
+    width: 28px;
+}
+
+.info-box {
+    padding-right: 0;
+}
+
+label > img {
+    width: 24px;
+}
+
+.math-operator {
+    margin-left: 5px;
+}
+
+.math-operator:hover {
+    color: #FF0000;
+    opacity: 1;
+}
+
+.client-container {
+    min-height: 200px;
+    padding: 15px;
+    background: #FFFFFF;
+    border: 1px solid rgba(157, 156, 156, 0.25);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    /*border-radius: 24px;*/
+    margin-bottom: 10px;
+}
+
+.sumary-decos {
+    min-height: 80px;
+    padding: 15px;
+    background: #FFFFFF;
+    border: 1px solid rgba(157, 156, 156, 0.25);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    /*border-radius: 24px;*/
+    margin-bottom: 10px;
+}
+
+.Decos-Install {
+    position: absolute;
+    left: 16.67%;
+    right: 16.81%;
+    top: 29.56%;
+    bottom: 64.22%;
+    background: rgba(30, 214, 136, 0.2);
+    /*border: 2px solid #1ED688;*/
+    box-sizing: border-box;
+}
+
+.Table-Tittle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+    color: #585858;
+}
+
+.nav-tabs.active {
+    border-bottom: 2px solid #DD5F57;
+}
+
+/*reglas de negocio*/
+.cssbotonplanMD {
+    margin-top: -6px !important;
+    background-color: #DA291C;
+    margin: 0;
+    font-size: 12px;
+    border-radius: 5px;
+    text-align: center;
+    font-style: normal;
+    color: #FFFFFF;
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px;
+}
+
+.sugbutton2 {
+    position: fixed;
+    border-radius: 5px;
+    bottom: 400px;
+    right: -65px;
+    width: 150px;
+    -webkit-transform-origin: 50% 51%;
+    z-index: 999;
+    cursor: pointer;
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.sugbutton2:hover {
+    transform: rotate(-90deg);
+    color: white !important;
+    text-decoration: none;
+}
+
+.sugbutton2:focus {
+    color: white !important;
+    text-decoration: none;
+}
+
+.rulenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    transition: 0.5s;
+}
+
+.us-modal-tittle-2 {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.color-claro {
+    color: #fff !important;
+    background-color: #da291c !important;
+}
+
+.text-Address-alert {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: #DD5F57;
+}
+.text-Address-det {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: #9D9D9D;
+}
+.text-Address-import {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 15px;
+    margin-top: 10px;
+}
+
+/* Cobertura */
+.divSelect-transfer {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    border-bottom-style: solid;
+    border-bottom-color: #DD5F57;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-bottom: 14px;
+    color: #747D84;
+    cursor: default;
+}
+
+.divNoSelect-transfer {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    border-bottom-style: solid;
+    border-bottom-color: #FFFFFF;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-bottom: 14px;
+    color: rgba(116, 125, 132, 0.5);
+    cursor: pointer;
+    /*opacity: 0.7;*/
+}
+
+.divNoSelect-transfer:hover {
+    color: #747D84;
+}   
+
+.divSelect-transfer div {
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.divNoSelect-transfer div {
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.info-gris {
+    padding: 5px;
+    background: #837F7F;
+    border-radius: 5px;
+        
+    border: 1px solid rgba(157, 156, 156, 0.25);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+}
+
+.info-rojo {
+    padding: 5px;
+    background: #DD5F57;
+    border-radius: 5px;
+    border: 1px solid rgba(157, 156, 156, 0.25);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+}
+
+.info-gris-cliente {
+    padding: 5px;
+    background: #837F7F;
+    border-radius: 5px;        
+    border: 1px solid rgba(157, 156, 156, 0.25);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1px;
+}
+
+.info-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.info-celeste {
+    background: rgba(30, 214, 136, 0.2);
+}
+
+.info-naranja {
+    background: #FCEFEE;
+}
+
+.info-borde {
+    border: 2px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 1px;
+}
+
+.info-cabecera {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3px;
+    line-height: 15px;
+    color: #585858;
+}
+
+.info-conteo {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    color: #686868;
+}
+
+.info-agrupa {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+    color: #585858;
+}
+
+.info-gestion {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+    color: #585858;
+    background: #F0F3F5;
+}
+
+.summary {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #949292;
+}
+
+.bg-container-summary {
+    padding: 15px;
+    background: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.alert-message {
+    margin: 5px 0px;
+}
+
+.plan-resume {
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(30, 214, 136, 0.2); 
+    border: 2px solid #1ED688; 
+    box-sizing: border-box;
+}
+
+.text-line {
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-line-red {
+    color: #FF0000;   
+    margin: 0px 5px 0px;     
+}
+
+.row-margin-bottom {
+    margin-bottom: 10px !important;
+}

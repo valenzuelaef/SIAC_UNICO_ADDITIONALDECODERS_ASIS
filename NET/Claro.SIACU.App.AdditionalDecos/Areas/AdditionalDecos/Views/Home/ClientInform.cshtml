@@ -1,0 +1,80 @@
+﻿
+<div class="client-container" style="display:none">
+
+    <div class="row">
+        <div class="customer-data-title">
+            <div class="customer-data-title-items customer-data-title-icon">
+                <span class="new-service-core-icon"></span>
+            </div>
+            <div class="customer-data-title-items customer-data-title-label">
+                <span>INFORMALE AL CLIENTE</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row row-margin-bottom">
+
+        <div class="col-sm-6">
+            <div class="col-sm-11 col-sm-offset-1 text-right" style="background: #837F7F; border-radius: 5px; height:auto; padding: 5px">
+                <div class="col-sm-6 text-left">
+                    <span style="font-weight: bold; font-size: 15px; color: #FFFFFF; ">Cargo Fijo Actual</span>
+                </div>
+                <div class="col-sm-6">
+                    <span id="CurrentCost" class="pull-right" style="font-weight: bold; font-size: 15px; color: #FFFFFF;">0.00</span>
+                    <span class="pull-right" style="font-weight: bold; font-size: 15px; color: #FFFFFF;">S/&nbsp;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="col-sm-11 text-right" style="background: #837F7F; border-radius: 5px; height:auto; padding: 5px">
+                <div class="col-sm-6 text-left">
+                    <span style="font-weight: bold; font-size: 15px; color: #FFFFFF; ">Nuevo Cargo Fijo</span>
+                </div>
+                <div class="col-sm-6">
+                    <span id="NewCurrentCost" class="pull-right" style="font-weight: bold; font-size: 15px; color: #FFFFFF;">0.00</span>
+                    <span class="pull-right" style="font-weight: bold; font-size: 15px; color: #FFFFFF;">S/&nbsp;</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row row-margin-bottom">
+
+        <div class="col-sm-6">
+            <div class="col-sm-11 col-sm-offset-1 text-right" style="background: #837F7F; border-radius: 5px; height:auto; padding: 5px">
+                <div class="col-sm-6 text-left">
+                    <span style="font-weight: bold; font-size: 15px; color: #FFFFFF; ">Cargo Fijo Promocional</span>
+                </div>
+                <div class="col-sm-6">
+                    <span id="PromCharge" class="pull-right" style="font-weight: bold; font-size: 15px; color: #FFFFFF;">0.00</span>
+                    <span class="pull-right" style="font-weight: bold; font-size: 15px; color: #FFFFFF;">S/&nbsp;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="col-sm-11 text-right" style="background: #837F7F; border-radius: 5px; height:auto; padding: 5px">
+                <div class="col-sm-6 text-left">
+                    <span style="font-weight: bold; font-size: 15px; color: #FFFFFF; ">Siguiente Recibo</span>
+                </div>
+                <div class="col-sm-6">
+                    <span id="NextMonth" class="pull-right" style="font-weight: bold; font-size: 15px; color: #FFFFFF;">0.00</span>
+                    <span class="pull-right" style="font-weight: bold; font-size: 15px; color: #FFFFFF;">S/&nbsp;</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-offset-6 col-md-6">
+            <p style="font-size: 9px;" class="text-center">*(Cargo Fijo + Prorrateo + Costo de Instalación)</p>
+        </div>
+    </div> 
+
+    <div class="clearfix"></div>
+
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

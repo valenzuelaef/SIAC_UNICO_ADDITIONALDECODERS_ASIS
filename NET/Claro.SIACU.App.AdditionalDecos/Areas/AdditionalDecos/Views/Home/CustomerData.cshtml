@@ -1,0 +1,186 @@
+﻿
+<style>
+    h4.panel-title > span.partial-cost {
+        margin: 4.5px 10px 4.5px 2px;
+        display: block;
+    }
+</style>
+<div id="divCustomerData" class="bg-container">
+
+    <div class="row">
+        <div class="customer-data-title">
+            <div class="customer-data-title-items customer-data-title-icon">
+                <span class="pqt-actual-icon"></span>
+            </div>
+            <div class="customer-data-title-items customer-data-title-label">
+                <span>PAQUETE ACTUAL</span>
+            </div>
+            <div class="customer-data-title-items customer-data-title-price text-right pull-right">
+                <span class="data-currency">S/</span>
+                <span id="spnPackageCost" class="data-price"></span>
+                <p class="data-igv">Incluido IGV</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12 plan">
+            <div class="col-xs-5 col-sm-5 col-md-5">
+                <div class="plan-text">
+                    <div class="row">
+                        <div class="col-md-12" id="spnPackageDescription"></div>
+                        <div class="col-md-12 description"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7 col-sm-7 col-md-7">
+                <img src="/Content/Images/SUFija/3playBlanco.png" alt="" class="pull-right img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel-group customer-data-panel-group" id="accordion">
+
+            <div class="panel panel-default customer-data-panel">
+
+                <div class="panel-heading">
+                    <h4 class="panel-title font-size-fixed">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="" href="#collapseOne">
+                            <img src="/Content/Images/SUFija/ico_client.svg" alt="" class="icon-collapse-bar-horizontal" />
+                            Datos del Cliente
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body customer-data-panel-body">
+                        <div class="row">
+                            <div class="col-sm-12 text-left">
+                                <span class="label-customer">Cliente/Razón social.</span>
+                                <p id="spnCustomerName" class="input-customer"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 text-left">
+                                <span class="label-customer">Contacto.</span>
+                                <p id="spnContactName" class="input-customer"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 text-left">
+                                <span class="label-customer">Contrato.</span>
+                                <p id="spnContractNumber" class="input-customer"></p>
+                            </div>
+                            <div class="col-sm-6 text-left">
+                                <span class="label-customer">Fecha de Activación.</span>
+                                <p id="spnActivationDate" class="input-customer"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 text-left">
+                                <span class="label-customer">Representante Legal.</span>
+                                <p id="spnLegalRepresentative" class="input-customer"></p>
+                            </div>
+                            <div class="col-sm-6 text-left">
+                                <span class="label-customer">Doc. Repres. Legal.</span>
+                                <p id="spnLegalRepresentativeDocument" class="input-customer"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 text-left">
+                                <span class="label-customer">DNI/RUC.</span>
+                                <p id="spnDocumentNumber" class="input-customer"></p>
+                            </div>
+                            <div class="col-sm-6 text-left">
+                                <span class="label-customer">Customer ID</span>
+                                <p id="spnCustomerID" class="input-customer"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 text-left">
+                                <span class="label-customer">Tipo de Persona.</span>
+                                <p id="spnCustomerType" class="input-customer"></p>
+                            </div>
+                            <div class="col-sm-6 text-left">
+                                <span class="label-customer">Ciclo de Facturación.</span>
+                                <p id="spnBillingCycle" class="input-customer"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 text-left">
+                                <span class="label-customer">Telefono 1.</span>
+                                <p id="spnPhoneNumber01" class="input-customer"></p>
+                            </div>
+                            <div class="col-sm-6 text-left">
+                                <span class="label-customer">Telefono 2.</span>
+                                <p id="spnPhoneNumber02" class="input-customer"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h4 class="panel-title font-size-fixed">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="" href="#collapseTwo">
+                            <img src="/Content/Images/SUFija/ico_core_services.svg" alt="" class="icon-collapse-bar-horizontal" />
+                            Servicios y Equipos
+                        </a>
+                        <span id="spnFixedChargeCoreService" class="partial-cost pull-right">S/ 0.00</span>
+                    </h4>
+                </div>
+
+                <div id="collapseTwo" class="panel-collapse collapse in">
+
+                    <div id="lpCoreService" class="panel-body customer-data-panel-body"></div>
+
+                </div>
+
+            </div>
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h4 class="panel-title font-size-fixed">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="" href="#collapseThree">
+                            <img src="/Content/Images/SUFija/ico_additional_services.svg" alt="" class="icon-collapse-bar-horizontal" />
+                            Servicios Adicionales
+                        </a>
+                        <span id="spnFixedCharge" class="partial-cost pull-right">S/ 0.00</span>
+                    </h4>
+                </div>
+
+                <div id="collapseThree" class="panel-collapse collapse in">
+                    <div class="panel-body customer-data-panel-body">
+
+                        <div id="serviceTree" class="col-sm-12 remove-margin remove-padding"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h4 class="panel-title font-size-fixed">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="" href="#collapseFour">
+                            <img src="/Content/Images/SUFija/ico_additional_services.svg" alt="" class="icon-collapse-bar-horizontal" />
+                            Equipos Adicionales
+                        </a>
+                        <span id="spnFixedChargeEquipmentService" class="partial-cost pull-right">S/ 0.00</span>
+                    </h4>
+                </div>
+
+                <div id="collapseFour" class="panel-collapse collapse in">
+                    <div id="lpAdditionalEquipment" class="panel-body customer-data-panel-body"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+<div id="countdown" style="background-color: #da291c; color: #ffffff; font-size: 20px; position: fixed; z-index: 10; padding-left: 2%; padding-right: 2%; top: 86vh;display:none"><small style="font-size: 13px;">Tiempo restante de reserva</small><p></p></div>

@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>@ViewBag.Title - SIAC Único</title>
+    <link rel="shortcut icon" href="">
+    @Styles.Render("~/Content/AdditionalDecos/bootstrap-css")
+    @Styles.Render("~/bundles/AdditionalDecos/claro-fw-css")
+    @RenderSection("styles", required: false)
+    @Scripts.Render("~/bundles/AdditionalDecos/jquery")
+
+    @Scripts.Render("~/bundles/AdditionalDecos/jquery-addon-siacu")
+    @Scripts.Render("~/bundles/AdditionalDecos/Claro-siacu")
+    <script src="~/Content/Lib/dataTables.bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="main-contenedor">
+
+        <!--Reglas de atencion-->
+        <a class="cssbotonplanMD sugbutton2" onclick="openRules()">
+            <i class="glyphicon glyphicon-file"></i>
+            Reglas de Atención
+        </a>
+        <div id="myRulenav" class="rulenav" style="z-index: 21474836;" onmouseout="closeRules()">
+            <div role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-full" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #DA291C;">
+                            <span class="us-modal-tittle-2">Reglas de Atención</span>
+                            <a href="javascript:void(0)" onclick="closeRules()"><i class="glyphicon glyphicon-arrow-right pull-right" style="color:white;"></i></a>
+                        </div>
+                        <div class="modal-body" style="padding-top: 5px; padding-bottom: 0px; height: 540px !important;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Reglas de atencion-->
+
+        <header id="main-header">
+            <nav class="navbar navbar-default bg-header">
+                <div class="container-fluid color-claro">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-brand navbar-tx-title">INSTALACIÓN Y DESINSTALACIÓN</div>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li style="padding-top: 10px;padding-right:10px;" class="text-center">
+                                <span id="spnCustomerNameTitle" class="pull-left"></span><br />
+                                <span id="idSession" class="pull-left"></span>
+                            </li>
+                            <li><div class="separator-vertical"></div></li>
+                            <li>
+                                <div class="navbar-node-group btn-group" role="group" aria-label="...">
+                                    <div class="navbar-info navbar-info-left">
+                                        <span class="navbar-info-icon-node"></span>   Nodo   <span id="spnNode" class="navbar-info-badge-node">0</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><div class="separator-vertical"></div></li>
+                            <li><button type="button" class="btn navbar-info-button" onclick="window.location.reload(false);"><span class="navbar-info-icon-check"></span> Actualizar</button></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </header>
+
+        <main id="navbar-body" class="principal-row">
+            <div>
+                @RenderBody()
+            </div>
+        </main>
+
+        <footer id="main-footer" class="footer">
+            <button type="button" class="btn btn-transaction prev-step">Anterior</button>
+            <button type="button" class="btn btn-transaction-red next-step">Siguiente</button>            
+            <button type="button" class="btn btn-transaction-red Save-step "><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+            <button type="button" class="btn btn-transaction Constancy-step" id="btnConstancy" style="display:none;"><span class="glyphicon glyphicon-list-alt"></span> Constancia</button>
+        </footer>
+    </div>
+    <div id="myModalLoad" style="display:none;">
+        <span>
+            <img src="@Url.Content("~/Content/images/SUFija/loading_Claro.gif")" width="25" height="25" />  Cargando ....
+        </span>
+    </div>
+
+
+    @Scripts.Render("~/bundles/AdditionalDecos/bootstrap")
+    @Scripts.Render("~/bundles/AdditionalDecos/Script")
+    @RenderSection("scripts", required: false)
+    <script>
+    window.onload = maxWindowPageTransac;
+    function maxWindowPageTransac() {
+        window.moveTo(0, 0);
+        window.resizeTo(screen.width, screen.height);
+    }
+    </script>
+
+</body>
+</html>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")

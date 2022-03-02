@@ -1,0 +1,153 @@
+﻿<div class="col-md-12 column-layout" style="padding: 0" id="DivScheduling">
+    <div class="col-md-12 column-layout">
+        <div class="container-fluid middle-container">
+            <div class="row">
+                <div class="bg-container">
+                    <!--<div class="customer-data-title box title-box">-->
+                    <div class="customer-data-title box">
+                        <div class="customer-data-title-items customer-data-title-icon" style="width: 5%; padding: 0">
+                            <span class="scheduling-icon"></span>
+                        </div>
+                        <div class="customer-data-title-items customer-data-title-label" style="padding-top: 10px; width: 60%">
+                            <span>PROGRAMACIÓN</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="company" class="label-cp">Tipo de Trabajo.</label>
+                                            <select class="form-control inputs-cp" id="cboTypeWork">
+                                            </select>
+                                            <p id="ErrorMessageddlWorkType" class="alert-danger alert-message"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="company" class="label-cp">Sub Tipo de Trabajo.</label>
+                                            <select class="form-control inputs-cp " id="cboStypeWork">
+                                            </select>
+                                            <p id="ErrorMessageddlSubWorkType" class="alert-danger alert-message"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="company" class="label-cp">Fecha de Visita.</label>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control input-sm" id="txtCalendar" placeholder="DD/MM/AAAA">
+                                                <label id="calendartxtStartDate" class="btn transaction-button input-group-addon" for="txtCalendar">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </label>
+                                            </div>
+                                            <p id="ErrorMessagetxtCalendar" class="alert-danger alert-message"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="company" class="label-cp">Horario.</label>
+                                            <select class="form-control inputs-cp coreSchedule" id="cboSchedule">
+                                            </select>
+                                            <p id="ErrorMessageddlTimeZone" class="alert-danger alert-message"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="customer-data-title box title-box">-->
+                    <div class="customer-data-title box">
+                        <div class="customer-data-title-items customer-data-title-icon" style="width: 5%; padding: 0">
+                            <span class="additional_info-icon"></span>
+                        </div>
+                        <div class="customer-data-title-items customer-data-title-label" style="padding-top: 10px; width: 60%">
+                            <span>DATOS ADICIONALES</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="company" class="label-cp">Enviar por e-mail.</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input id="chkMail" type="checkbox" class="style-checkbox" aria-label="..." checked="">
+                                            <label for="chkMail" class="inline-label"></label>
+                                        </span>
+                                        <input id="email" type="text" class="form-control inputs-cp" aria-label="..." >
+                                    </div>
+                                    <p id="ErrorMessageEmail" class="alert-danger alert-message"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="company" class="label-cp">Teléfono de Referencia. (Opcional)</label>
+                                    <input type="text" class="form-control inputs-cp" placeholder="" id="company">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="company" class="label-cp">Punto de Atención.</label>
+                                    <select class="form-control inputs-cp" id="cboPointAttention">
+                                    </select>
+                                    <p id="ErrorMessageddlCenterofAttention" class="alert-danger alert-message"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="company" class="label-cp">Notas.</label>
+                                    <textarea class="form-control inputs-cp" rows="6" style="resize:none;" id="txtNote"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .datepicker table tr td.disabled {
+        background: red;
+        color: white;
+        cursor: default;
+    }
+
+        .datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
+            background: red;
+            color: white;
+            cursor: default;
+        }
+</style>
+
+
+<script type="text/javascript">
+    function unavailable(date) {
+        dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+        if ($.inArray(dmy, unavailableDates) == -1) {
+            return [true, ""];
+        } else {
+            return [false, "", "No Disponible"];
+        }
+    }
+
+    var date = new Date();
+    date.setDate(date.getDate());
+    $("#txtCalendar").datepicker({
+        format: 'dd/mm/yyyy',
+        startDate: date,
+        autoclose: true,
+        minDate: 0,
+        // beforeShowDay: unavailable
+    });
+</script>
+
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
