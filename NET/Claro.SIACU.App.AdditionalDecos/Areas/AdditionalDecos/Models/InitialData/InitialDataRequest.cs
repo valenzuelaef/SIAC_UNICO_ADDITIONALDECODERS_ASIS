@@ -41,5 +41,9 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Models.InitialDa
         public string Type { get; set; }
         [DataMember(Name = "transactionId")]
         public string TransactionId { get; set; }
+        [DataMember(Name = "flag")]
+        public string flagConvivencia { get; set; }        
+        [DataMember(Name = "coIdPub")]//ContratoPublico-TOBE
+        public string coIdPub { get; set; }//ContratoPublico-TOBE 
     }
 }

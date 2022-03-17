@@ -56,6 +56,10 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Models.CargaInic
         public string sncode { get; set; }
         [DataMember(Name = "estado")]
         public string estado { get; set; }
+        //INI-idServPvuToBe-TOBE
+        [DataMember(Name = "idServPvuTobe")]
+        public string idServPvuTobe { get; set; }
+        //FIN-idServPvuToBe-TOBE
     }
     //Validar -ubicacion  - Evalenzs
     [DataContract(Name = "puntoAtencion")]

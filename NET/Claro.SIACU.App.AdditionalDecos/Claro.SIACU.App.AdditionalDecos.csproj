@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Areas\AdditionalDecos\Scripts\Index.js" />
     <Content Include="Areas\AdditionalDecos\Scripts\Scheduling.js" />
     <Content Include="Content\css\datepicker.css" />
     <Content Include="Content\images\SUFija\3playBlanco.png" />
@@ -199,7 +200,6 @@
     <Content Include="Content\images\SUFija\ico_speech_off.svg" />
     <Content Include="Areas\AdditionalDecos\Scripts\Bridge.js" />
     <Content Include="Content\css\bootstrap-multiselect-v2.css" />
-    <Content Include="Areas\AdditionalDecos\Scripts\Index.js" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\claro-fw.css" />
@@ -277,7 +277,7 @@
     <Compile Include="Areas\AdditionalDecos\Models\DataPower\HeaderStatusResponse.cs" />
     <Compile Include="Areas\AdditionalDecos\Models\InitialData\AdditionalServicesResponse.cs" />
     <Compile Include="Areas\AdditionalDecos\Models\InitialData\ConfigurationResponse.cs" />
-	<Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\DatosAdicionalesRequest.cs" />
+    <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\DatosAdicionalesRequest.cs" />
     <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\DatosAdicionalesResponse.cs" />
     <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\FixedPlanResponse.cs" />
     <Compile Include="Areas\AdditionalDecos\Models\DatosAdicionales\ListaCentroPoblados.cs" />

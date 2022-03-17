@@ -214,7 +214,7 @@
                     that.AdditionalDecos.Data.Configuration.Constantes_Igv = igv
                     // Load Customer Information - Left Panel
                     $.app.renderCustomerInformation(that.AdditionalDecos);
-                    // Load Core Service Information - Left Panel              
+                    // Load Core Service Information - Left Panel                                  
                     $.app.renderCoreServices(that.AdditionalDecos);
                     //Load Additional Service Information - Left Panel
                     $.app.renderAdditionalServices(that.AdditionalDecos);
@@ -491,7 +491,7 @@
             var lstServicesCoreClient = that.AdditionalDecos.Data.CoreServices;
             debugger;
             lstServicesCoreClient.forEach(function (Item) {
-                var objService = lstAddServices.filter(function (x) { return x.LineID == Item.idServPvu; })[0];
+                var objService = lstAddServices.filter(function (x) { return x.LineID == Item.idServPvu  || x.LineID == Item.idServPvuTobe; })[0];
                 if (objService != null || objService != undefined) {
                     that.AdditionalDecos.oRequest.arrCoreServices.push({
                         LineID: objService.LineID,
@@ -766,7 +766,7 @@
 
             } else {
                 $.each(arrEquipmentClient, function (Index, Item) {
-                    arrEquipmentPlan = arrEquipmentPlan.filter(function (x) { return x.LineID != Item.idServPvu; });
+                    arrEquipmentPlan = arrEquipmentPlan.filter(function (x) { return x.LineID != Item.idServPvu  && x.LineID != Item.idServPvuTobe; });
                 });
                 $.each(that.AdditionalDecos.oRequest.arrAddEquipment, function (Index, Item) {
                     arrEquipmentPlan = arrEquipmentPlan.filter(function (x) { return x.LineID != Item.idServicio; });
@@ -854,7 +854,7 @@
             var decPromotionAmount = that.AdditionalDecos.oRequest.decPromotionAmount * 1;
 
             $.each(arrEquipmentClient, function (Index, Item) {
-                var oItemClient = arrEquipmentPlan.filter(function (x) { return x.LineID == Item.idServPvu; })[0];
+                var oItemClient = arrEquipmentPlan.filter(function (x) { return x.LineID == Item.idServPvu  || x.LineID == Item.idServPvuTobe; })[0];
                 arrEquipment.push(oItemClient);
             });
 
@@ -864,7 +864,6 @@
             if (intCount >= 0) {
                 var oGroupSelect = arrEquipmentGroup.filter(function (x) { return x.idEquipo == strID; })[0];
                 arrEquipmentAddFilter = arrEquipmentAdd.filter(function (x) { return x.Type == oGroupSelect.tipoEquipo; });
-
                 if (arrEquipmentAddFilter.length == 0) {
                     arrEquipment = arrEquipment.filter(function (x) { return x.tipoEquipo == oGroupSelect.tipoEquipo; });
                     arrEquipment = arrEquipment.sort(function (a, b) {
@@ -1051,39 +1050,45 @@
                 if (a.idServPvu < b.idServPvu) { return -1; }
                 return 0;
             });
-
+			/*inicio - solo para log quitar*/
+			console.log('Lista de Equipos Disponibles del plan: ');
+			$.each(arrEquipmentPlan, function (Index, Item) {
+				console.log('- Item.ServiceDescription --> ' +Item.ServiceDescription +' - '+ '- Item.LineID -->'+ Item.LineID );
+				});
+			/*fin - solo para log quitar*/
             console.log('plataformaAT: ' + Session.SessionParams.DATACUSTOMER.objPostDataAccount.plataformaAT);
             $.each(arrEquipmentClient, function (Index, Item) {
-                console.log('Item.idServPvu --> ' + Item.idServPvu + ' - o - ' + 'Item.idServPvuTobe --> ' + Item.idServPvuTobe);
                 if (!($.array.isEmptyOrNull(Item.idServPvu) && $.array.isEmptyOrNull(Item.idServPvuTobe))) {
-                    if (Session.SessionParams.DATACUSTOMER.objPostDataAccount.plataformaAT == 'TOBE')
+					console.log('Equipo cliente: Item.ServiceDescription  --> ' +Item.ServiceDescription +' -> '+  'Item.idServPvu --> ' + Item.idServPvu + ' - o - ' + 'Item.idServPvuTobe --> ' + Item.idServPvuTobe);			
+					 if (Session.SessionParams.DATACUSTOMER.objPostDataAccount.plataformaAT == 'TOBE')
                         var oEquipment = arrEquipmentPlan.filter(function (x) { return x.LineID == Item.idServPvu || x.LineID == Item.idServPvuTobe; })[0];
                     else
                         var oEquipment = arrEquipmentPlan.filter(function (x) { return x.LineID == Item.idServPvu })[0];
-                    debugger;
-                    var oGroup = arrEquipmentGroup.filter(function (x) { return x.tipoEquipo == oEquipment.tipoEquipo })[0];
+					var oGroup = arrEquipmentGroup.filter(function (x) { return x.tipoEquipo == oEquipment.tipoEquipo })[0];
+					debugger;
 
-                    if (oEquipment != null) {
-                        var strID = oGroup.idEquipo;
-                        var strSpanID = 'SP_' + strID;
+					if (oEquipment != null) {
+						
+						var strID = oGroup.idEquipo;
+						var strSpanID = 'SP_' + strID;
 
-                        document.getElementById(strSpanID).innerHTML = (document.getElementById(strSpanID).innerHTML * 1) + 1;
+						document.getElementById(strSpanID).innerHTML = (document.getElementById(strSpanID).innerHTML * 1) + 1;
 
-                        var oDetail = {
-                            FixedCharge: that.getFixedChargeEquipment(oEquipment.tipoEquipo, oEquipment.FixedCharge * 1),
-                            cargoFijoPromocion: oEquipment.cargoFijoPromocion * 1,
-                            ServiceDescription: oEquipment.ServiceDescription,
-                            type: oEquipment.tipoEquipo
-                        };
-                        that.getDomDetail(oDetail, strID);
+						var oDetail = {
+							FixedCharge: that.getFixedChargeEquipment(oEquipment.tipoEquipo, oEquipment.FixedCharge * 1),
+							cargoFijoPromocion: oEquipment.cargoFijoPromocion * 1,
+							ServiceDescription: oEquipment.ServiceDescription,
+							type: oEquipment.tipoEquipo
+						};
+						that.getDomDetail(oDetail, strID);
 
-                        decRegularAmount += (oDetail.FixedCharge * 1);// decRegularAmount += (oGroup.FixedCharge * 1);
-                        decPromotionAmount += (oDetail.cargoFijoPromocion * 1);
-                    }
+						decRegularAmount += (oDetail.FixedCharge * 1);// decRegularAmount += (oGroup.FixedCharge * 1);
+						decPromotionAmount += (oDetail.cargoFijoPromocion * 1);
+					}
 
-                    intEquipmentTot++;
-                }
-            });
+					intEquipmentTot++;
+				}
+			});
 
             that.AdditionalDecos.oRequest.TotEquipment = intEquipmentTot;
             that.AdditionalDecos.oRequest.intQuantity = intEquipmentTot;
@@ -1373,8 +1378,6 @@
 
 
         },
-
-
 
 
         loadProgramming: function (oRequest) {

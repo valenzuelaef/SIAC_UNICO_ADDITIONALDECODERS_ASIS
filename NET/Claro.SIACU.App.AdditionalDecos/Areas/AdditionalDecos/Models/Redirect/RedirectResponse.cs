@@ -144,6 +144,8 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Models.Redirect
         public string LegalUrbanization { get; set; }
         [DataMember(Name = "PlaneCodeInstallation")]
         public string PlaneCodeInstallation { get; set; }
+        [DataMember(Name = "coIdPub")]//ContratoPublico-TOBE
+        public string coIdPub { get; set; }//ContratoPublico-TOBE 
     }
 
     [DataContract(Name = "objPostDataAccount")]
@@ -171,6 +173,18 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Models.Redirect
         public string AccountId { get; set; }
         public string Level { get; set; }
         public string CustomerId { get; set; }
+        [DataMember(Name = "SaldoCreditLimit")]
+        public string SaldoCreditLimit { get; set; }
+        [DataMember(Name = "billingAccountId")]
+        public string billingAccountId { get; set; }
+        [DataMember(Name = "bmIdPub")]
+        public string bmIdPub { get; set; }
+        [DataMember(Name = "contactSeqno")]
+        public string contactSeqno { get; set; }
+        [DataMember(Name = "lstPostDataAccount")]
+        public string lstPostDataAccount { get; set; }
+        [DataMember(Name = "plataformaAT")]
+        public string plataformaAT { get; set; }
     }
 
     [DataContract(Name = "DataServiceResponse")]

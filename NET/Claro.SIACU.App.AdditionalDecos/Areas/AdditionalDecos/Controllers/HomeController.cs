@@ -53,7 +53,12 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
 
             try
             {
-                string strUrl = ConfigurationManager.AppSettings["DPGetCargaDatosClienteFija"];
+                string strUrl;
+                 if (TransactionID == "2")
+                      strUrl = "http://172.19.172.6/v1.0/postventa/customer_Domain/custInfo/cargadatosclientefija/obtenerDatosClienteFija";
+                else
+                      strUrl = ConfigurationManager.AppSettings["DPGetCargaDatosClienteFija"];
+
                 oInitialDataRequest.Audit = oAuditRequest;
                 oInitialDataRequest.MessageRequest = new Models.InitialData.InitialDataMessageRequest
                 {
@@ -84,7 +89,7 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
                         codeCac = oBodyRequest.codeCac,
                         state = oBodyRequest.state,
                         Type = oBodyRequest.Type,
-                        //flagConvivencia = ConfigurationManager.AppSettings["flagConvivenciaAsIsToBeReingFija"]
+                        flagConvivencia = ConfigurationManager.AppSettings["flagConvivenciaAsIsToBeReingFija"]
                     }
                 };
 
@@ -132,8 +137,8 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
                     ContratoId = oBodyRequest.ContractID,
                     customerId = oBodyRequest.CustomerID,
                     plan = oInitialDataResponse.MessageResponse.Body.CoreServices.planCode,
-                    //coIdPub = oBodyRequest.coIdPub,//ContratoPublico-TOBE
-                    //flagConvivencia = ConfigurationManager.AppSettings["flagConvivenciaAsIsToBeReingFija"]//ContratoPublico-TOBE
+                    coIdPub = oBodyRequest.coIdPub,//ContratoPublico-TOBE
+                    flagConvivencia = ConfigurationManager.AppSettings["flagConvivenciaAsIsToBeReingFija"]//ContratoPublico-TOBE
                 });
 
                 if (oRequestDatosAdicionales.MessageResponse.Body.CodigoRespuesta == 0)
@@ -221,8 +226,8 @@ namespace Claro.SIACU.App.AdditionalDecos.Areas.AdditionalDecos.Controllers
                     plan = request.plan == null ? string.Empty : request.plan,
                     canal = string.Empty,
                     cantDeco = request.cantDeco == null ? string.Empty : request.cantDeco,
-                    //coIdPub = request.coIdPub,//ContratoPublico-TOBE
-                    //flagConvivencia = ConfigurationManager.AppSettings["flagConvivenciaAsIsToBeReingFija"]//request.flagConvivencia,//ContratoPublico-TOBE
+                    coIdPub = request.coIdPub,//ContratoPublico-TOBE
+                    flagConvivencia = ConfigurationManager.AppSettings["flagConvivenciaAsIsToBeReingFija"]//request.flagConvivencia,//ContratoPublico-TOBE
                 }
             };
 

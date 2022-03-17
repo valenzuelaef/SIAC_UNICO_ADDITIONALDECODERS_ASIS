@@ -1403,7 +1403,6 @@
 
             renderAdditionalEquipment: function (transactionData) {
                 var aplicaIGV = (transactionData.Data.plataformaAT == 'TOBE') ? '00' : transactionData.Data.Configuration.Constantes_Igv;
-                console.log('aplicaIGV -> ' + aplicaIGV)
                 var that = this,
                   igv = "1." + aplicaIGV,
                   fixedCharge = 0;
@@ -1415,15 +1414,13 @@
                     var cable = transactionData.Data.AdditionalEquipment.filter(function (el, idx) { return el.ServiceName == 'Internet' }),
                         telephony = transactionData.Data.AdditionalEquipment.filter(function (el, idx) { return el.ServiceName == 'Telefonia' }),
                         internet = transactionData.Data.AdditionalEquipment.filter(function (el, idx) { return el.ServiceName == 'Cable' });
-                    console.log(internet);
-                    console.log(telephony)
-                    console.log(internet)
+
                     $.each([internet, cable, telephony], function (idx, el) {
 
                         var markup = '';
 
                         if (el.length > 0) {
-
+                            //fixedCharge = parseFloat(fixedCharge) + parseFloat(el[0].FixedCharge);
                             markup += '<div class="row">';
 
                             markup += '<div class="col-sm-5 text-left pull-left">';
@@ -1440,7 +1437,6 @@
                             markup += '</div>';
 
                             $.each(el, function (i, eq) {
-
                                 fixedCharge = parseFloat(fixedCharge) + parseFloat(eq.FixedCharge);
                                 markup += '<div class="col-sm-7 text-left pull-right">';
                                 markup += '<div class="col-md-1 remove-padding">';

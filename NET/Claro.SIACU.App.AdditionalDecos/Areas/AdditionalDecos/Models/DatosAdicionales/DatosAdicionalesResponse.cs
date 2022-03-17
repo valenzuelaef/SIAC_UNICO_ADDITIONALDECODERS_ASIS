@@ -64,9 +64,10 @@ namespace Claro.SIACU.App.Transfer.Areas.Transfer.Models.DatosAdicionales
         public DatosinstalacionclienteObtenerDatosInstalacion datosinstalacioncliente_obtenerDatosInstalacion { get; set; }
 
         [DataMember(Name = "planfijaservequip/obtPlanServEquDisponible")]
-        public PlanFijaServicio PlanFijaServicioCampana { get; set; } 
+        public PlanFijaServicio PlanFijaServicioCampana { get; set; }
 
-
+        [DataMember(Name = "consultatransaccionfija/validarTransaccion")]
+        public ConsultatransaccionfijaValidarTransaccion consultatransaccionfija_validarTransaccion { get; set; }
 
          //[DataMember(Name = "ubigeo/obtenerUbigeo")]
          //public UbicacionesObtenerUbicaciones ubicaciones_obtenerUbicaciones { get; set; }
@@ -195,7 +196,18 @@ namespace Claro.SIACU.App.Transfer.Areas.Transfer.Models.DatosAdicionales
 
         [DataMember(Name = "unidadCapacidad")]
         public string unidadCapacidad { get; set; }
-
+        //INI-ContratoPublico-TOBE
+        [DataMember(Name = "po")]
+        public string poId { get; set; }
+        [DataMember(Name = "poType")]
+        public string poType { get; set; }
+        [DataMember(Name = "idProducto")]
+        public string idProductoCBIO { get; set; }
+        [DataMember(Name = "pop1")]
+        public string pop1 { get; set; }
+        [DataMember(Name = "pop2")]
+        public string pop2 { get; set; }
+        //FIN-ContratoPublico-TOBE
     }
 
 
@@ -412,5 +424,44 @@ namespace Claro.SIACU.App.Transfer.Areas.Transfer.Models.DatosAdicionales
         public string FlagIndica { get; set; }
         [DataMember(Name = "flagReserva")]
         public string FlagReserva { get; set; }
+    }
+
+    [DataContract(Name = "consultatransaccionfija/validarTransaccion")]
+    public class ConsultatransaccionfijaValidarTransaccion
+    {
+        [DataMember(Name = "responseAudit")]
+        public ResponseAudit ResponseAudit { get; set; }
+        [DataMember(Name = "responseData")]
+        public ResponseData ResponseData { get; set; }
+    }
+
+    [DataContract(Name = "responseAudit")]
+    public class ResponseAudit
+    {
+        [DataMember(Name = "idTransaccion")]
+        public string IdTransaccion { get; set; }
+        [DataMember(Name = "codigoRespuesta")]
+        public string CodigoRespuesta { get; set; }
+        [DataMember(Name = "mensajeRespuesta")]
+        public string MensajeRespuesta { get; set; }
+    }
+
+    [DataContract(Name = "responseData")]
+    public class ResponseData
+    {
+        [DataMember(Name = "codigo")]
+        public string Codigo { get; set; }
+        [DataMember(Name = "mensaje")]
+        public string Mensaje { get; set; }
+        [DataMember(Name = "listaOpcional")]
+        public List<ListaOpcional> ListaOpcional { get; set; }
+    }
+
+    public class ListaOpcional
+    {
+        [DataMember(Name = "clave")]
+        public string Clave { get; set; }
+        [DataMember(Name = "valor")]
+        public string Valor { get; set; }
     }
 }

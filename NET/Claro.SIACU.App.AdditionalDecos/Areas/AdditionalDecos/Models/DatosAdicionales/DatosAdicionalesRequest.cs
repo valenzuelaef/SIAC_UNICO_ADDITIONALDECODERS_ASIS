@@ -87,6 +87,10 @@ namespace Claro.SIACU.App.Transfer.Areas.Transfer.Models.DatosAdicionales
         public string tipo { get; set; }
         [DataMember(Name = "cantDeco")]
         public string cantDeco { get; set; }
+        [DataMember(Name = "coIdPub")]//ContratoPublico-TOBE
+        public string coIdPub { get; set; }//ContratoPublico-TOBE 
+        [DataMember(Name = "flagConvivencia")]//ContratoPublico-TOBE
+        public string flagConvivencia { get; set; }//ContratoPublico-TOBE 
     }
 
 }
